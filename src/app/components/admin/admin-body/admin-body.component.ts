@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @Component({
   selector: 'app-admin-body',
@@ -11,5 +12,8 @@ export class AdminBodyComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  
 
 }
