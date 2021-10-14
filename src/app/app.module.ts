@@ -6,12 +6,16 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
 import { AdminBodyComponent } from './components/admin/admin-body/admin-body.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     AdminHeaderComponent,
-    AdminBodyComponent
+    AdminBodyComponent,
+    
+   
   ],
   imports: [
     BrowserModule
