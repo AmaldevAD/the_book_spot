@@ -1,3 +1,16 @@
-.admin-text{
+.admin-text {
     margin-left: 20px;
+}
+
+.card-style {
+    width: 19rem;
+    padding: 1rem 2rem;
+    
+}
+
+.card-imag-total {
+    width: 5rem
+}
+.text-block{
+    margin-left: 2rem;
 }
