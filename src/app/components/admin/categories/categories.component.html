@@ -1,0 +1,26 @@
+<div class="table-responsive">
+<table class="table table-bordered table-striped ">
+    <thead class="thead-dark">
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories">
+            <td colspan="2"><span id="imgspan" ><img src="{{category.Image}}" height="50px" width="50px"  ></span><span >{{category.Name}}</span></td>
+            <td>{{category.Description}}</td>
+            <td>
+                <button class="btn btn-info" *ngIf="!category.IsChecked" (click)="onButton(category)">Delivered</button>
+                <div *ngIf="category.IsChecked" style="color:green;font-weight: 600;">Item successfully delivered</div>
+            </td>
+            <td>
+                <button class="btn btn-warning " id="bt" >Edit</button> 
+                <button class="btn btn-danger " id="bt">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
