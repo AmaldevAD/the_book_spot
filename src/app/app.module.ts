@@ -8,6 +8,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
 import { AdminBodyComponent } from './components/admin/admin-body/admin-body.component';
 import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
+import { AdminUsersComponent } from './components/admin/admin-users/admin-users.component';
 import { AdminBookComponent } from './components/admin/admin-book/admin-book.component'; 
 
 
@@ -19,9 +20,9 @@ import { AdminBookComponent } from './components/admin/admin-book/admin-book.com
     AdminComponent,
     AdminHeaderComponent,
     AdminBodyComponent,
+    AdminSidebarComponent,
+    AdminUsersComponent,
     AdminBookComponent,
-    
-   
     AdminSidebarComponent
   ],
   imports: [
