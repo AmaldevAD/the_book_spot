@@ -11,11 +11,10 @@ import { OrderlistComponent } from './components/admin/orderlist/orderlist.compo
 const routes:Routes=[
   {path:'',redirectTo:'admin', pathMatch:'full', },
   { path: 'admin', component: AdminComponent },
-  { path: 'admin/book', component: AdminBookComponent},
+  { path: 'admin/books', component: AdminBookComponent},
   {path:'admin/categories',component:CategoriesComponent},
   {path:'admin/orders',component:OrderlistComponent},
   { path: 'admin/users', component: AdminUsersComponent },
-  { path: 'admin/book', component: AdminBookComponent}
   
 ]
 
