@@ -1,25 +1,38 @@
-<div class="table-responsive">
-    <table class="table table-bordered table-striped ">
-        <thead class="thead-dark">
-            <tr>
-                <th >OrderId</th>
-                <th>UserId</th>
-                <th>BookId</th>
-                <th>OrderPlacedAt</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let order of orders">
-                <td >{{order.orderId}}</td>
-                <td>{{order.userId}}</td>
-                <td>{{order.bookId}}</td>
-                <td>{{order.orderPlacedAt}}</td>
-                <td>
-                    <button class="btn btn-info deli"  *ngIf="!order.delivered" (click)="onButton(order)">Confirm Order</button>
-                    <div *ngIf="order.delivered" class="deli" style="color:green;font-weight: 600;">Order Confirmed</div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+
+
+
+
+    <div class="row" >
+        <div class="col-1" style="background-color: rgb(43, 43, 97); border-top-right-radius:20px;border-bottom-right-radius:20px; height: 100%; position: fixed;top: 0;left: 0px;">
+            <app-admin-sidebar></app-admin-sidebar>
+        </div>
+        <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 20px; ">
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th >OrderId</th>
+                            <th>UserId</th>
+                            <th>BookId</th>
+                            <th>OrderPlacedAt</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of orders">
+                            <td >{{order.orderId}}</td>
+                            <td>{{order.userId}}</td>
+                            <td>{{order.bookId}}</td>
+                            <td>{{order.orderPlacedAt}}</td>
+                            <td>
+                                <button class="btn btn-info deli"  *ngIf="!order.delivered" (click)="onButton(order)">Confirm Order</button>
+                                <div *ngIf="order.delivered" class="deli" style="color:green;font-weight: 600;">Order Confirmed</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+    
+        </div>
     </div>

@@ -33,4 +33,7 @@ a{
     border-radius: 10px;
     padding: 0px 5px;
     transition: 0.5s;
+    overflow-wrap: unset !important;
+    cursor: pointer;
+    color: rgb(122, 122, 122);
 }

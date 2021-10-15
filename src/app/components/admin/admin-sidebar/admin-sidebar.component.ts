@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminSidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router,private activeRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  navigate(target:string){
+    this.route.navigate([target],{replaceUrl:false});
   }
 
 }
