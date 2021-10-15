@@ -1,36 +1,38 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" style="border-radius: 15px;">
 
     <div class="row d-flex justify-content-around">
 
         <!-- add categories -->
-        <div class="card card-style">
-            <div class="row">
-                <div>+</div>
+        <div type="button" data-toggle="modal" data-target="#categoryModal"
+            class="card card-style grad-1 d-flex justify-content-center">
+            <div class="row d-flex justify-content-center add-text-div">
+                <div>+ &nbsp;</div>
                 <div class="text-block">
-                    Add categories
+                    Add Categories
                 </div>
             </div>
         </div>
 
         <!-- add book -->
-        <div class="card card-style">
-            <div class="row">
-                <div>+</div>
+        <div type="button" class="card card-style grad-2  d-flex justify-content-center">
+            <div data-toggle="modal" data-target="#bookModal" class="row d-flex justify-content-center add-text-div">
+                <div>+ &nbsp;</div>
                 <div class="text-block">
                     Add Book
                 </div>
             </div>
         </div>
 
-        <!-- add book -->
-        <div class="card card-style">
-            <div class="row">
-                <div>+</div>
+        <!-- add coupon -->
+        <div type="button" data-toggle="modal" data-target="#couponModal" class="card card-style grad-3 d-flex justify-content-center">
+            <div class="row d-flex justify-content-center add-text-div">
+                <div>+ &nbsp;</div>
                 <div class="text-block">
                     Add Coupon
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
@@ -40,4 +42,134 @@
     <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
         [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
     </circle-progress>
+</div>
+
+
+
+
+
+<!-- add category model -->
+<div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Category</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+
+
+                <form #catForm="ngForm" class="form-class">
+                    <div class="row " style="background-color: azure;">
+                        <div class="col-8 d-flex align-items-center justify-content-center">
+                            <input required type="file" accept="*.png.jpg">
+                        </div>
+                        <div class="col-4"> <img (change)="onSelectFile($event)" [src]="url" alt="" width="80px"
+                                height="80px"></div>
+                    </div>
+                    <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
+                        <input required name='cat-name' type="text" class="form-control  " id="cat-name"
+                            placeholder="Enter Category Name"><br>
+                        <input required name="cat-description" type="text" class="form-control" id="cat-description"
+                            placeholder="Enter Category Description"><br>
+                        <input required name="cat-position" type="number" class="form-control" id="cat-position"
+                            placeholder="Enter Catrgory position">
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button [disabled]='catForm.invalid' id="addcat" type="button" class="btn btn-dark">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- add book model -->
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Book</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+
+
+                <form #bookForm="ngForm" class="form-class">
+                    <div class="row " style="background-color: azure;">
+                        <div class="col-8 d-flex align-items-center justify-content-center">
+                            <input required type="file" accept="*.png.jpg">
+                        </div>
+                        <div class="col-4"> <img (change)="onSelectFile($event)" [src]="url" alt="" width="80px"
+                                height="80px"></div>
+                    </div>
+                    <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
+                        <input required name='book-title' type="text" class="form-control  " id="book-title"
+                            placeholder="Enter Book Titile"><br>
+                        <input required name="book-author" type="text" class="form-control" id="book-authoe"
+                            placeholder="Enter Book Author"><br>
+                        <input required name="book-position" type="number" class="form-control" id="book-position"
+                            placeholder="Enter Catrgory position">
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button [disabled]='bookForm.invalid' id="addcat" type="button" class="btn btn-dark">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- add book model -->
+<div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="couponModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Book</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+
+
+                <form #couponForm="ngForm" class="form-class">
+                   
+                    <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
+                        <input required name='coupon-name' type="text" class="form-control  " id="coupon-name"
+                            placeholder="Enter Coupon Code"><br>
+                       
+                        <input required name="coupon-percentage" type="number" class="form-control" id="coupon-percentage"
+                            placeholder="Enter Coupon Percentage">
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button [disabled]='couponForm.invalid' id="addcat" type="button" class="btn btn-dark">Add</button>
+            </div>
+        </div>
+    </div>
 </div>
