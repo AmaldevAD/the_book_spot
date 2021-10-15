@@ -1,5 +1,10 @@
 .admin-text {
-    margin-left: 20px;
+    font-weight: bold;
+    
+}
+.count-text{
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .card-style {
