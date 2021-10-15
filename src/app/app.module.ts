@@ -9,6 +9,9 @@ import { AdminHeaderComponent } from './components/admin/admin-header/admin-head
 import { AdminBodyComponent } from './components/admin/admin-body/admin-body.component';
 import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
 import { AdminUsersComponent } from './components/admin/admin-users/admin-users.component';
+import { AdminBookComponent } from './components/admin/admin-book/admin-book.component'; 
+
+
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
     AdminHeaderComponent,
     AdminBodyComponent,
     AdminSidebarComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    AdminBookComponent,
+    AdminSidebarComponent
   ],
   imports: [
     BrowserModule,

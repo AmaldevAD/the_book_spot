@@ -3,6 +3,13 @@
     padding-top: 10px;
     border-top-right-radius:10px
 }
+@media screen and (max-width: 940px) {
+    div.sidebar-div {
+      font-size: 10px;
+    }
+  }
+
+
 
 a:hover{
     text-decoration: none !important;
@@ -17,6 +24,7 @@ a{
 }
 .a-div{
     margin: 20px 10%;
+    overflow-wrap: break-word;
 }
 
 .a-div:hover{
