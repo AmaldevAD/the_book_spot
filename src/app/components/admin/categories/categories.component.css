@@ -1,0 +1,19 @@
+
+th{
+    text-align: center;
+}
+#bt
+{
+    margin:10px 10px;
+}
+.imgspan{
+    display: inline-block;
+    width:50%;
+}
+.deli
+{
+    margin-top: 8%;
+    margin-left: 10%;
+    width: 70%;
+    box-sizing: border-box;
+}
