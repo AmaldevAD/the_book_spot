@@ -18,6 +18,7 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
 import { CategorySearchComponent } from './components/admin/search/category-search/category-search.component';
 import { BookSearchComponent } from './components/admin/search/book-search/book-search.component';
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
+import { RegisterComponent } from './components/user/register/register.component';
 
 
 
@@ -38,6 +39,7 @@ import { UserCategoryComponent } from './components/user/user-category/user-cate
     CategorySearchComponent,
     BookSearchComponent,
     UserCategoryComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
