@@ -9,6 +9,7 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { CategoriesComponent } from './components/admin/categories/categories.component';
 import { OrderlistComponent } from './components/admin/orderlist/orderlist.component';
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
+import { RegisterComponent } from './components/user/register/register.component';
 
 
 const routes:Routes=[
@@ -22,7 +23,8 @@ const routes:Routes=[
   { path: 'admin/users', component: AdminUsersComponent },
   {path:'admin/categories/search/:searchItem',component:CategoriesComponent},
   {path:'admin/book/search/:searchItem',component:AdminBookComponent},
-  {path:'user/categories',component:UserCategoryComponent}
+  {path:'user/categories',component:UserCategoryComponent},
+  {path:'register', component: RegisterComponent}
   
 ]
 
