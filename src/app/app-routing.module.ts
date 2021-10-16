@@ -8,6 +8,7 @@ import { AdminCouponComponent } from './components/admin/admin-coupon/admin-coup
 import { LoginComponent } from './components/admin/login/login.component';
 import { CategoriesComponent } from './components/admin/categories/categories.component';
 import { OrderlistComponent } from './components/admin/orderlist/orderlist.component';
+import { UserCategoryComponent } from './components/user/user-category/user-category.component';
 
 
 const routes:Routes=[
@@ -20,7 +21,8 @@ const routes:Routes=[
   {path:'admin/orders',component:OrderlistComponent},
   { path: 'admin/users', component: AdminUsersComponent },
   {path:'admin/categories/search/:searchItem',component:CategoriesComponent},
-  {path:'admin/book/search/:searchItem',component:AdminBookComponent}
+  {path:'admin/book/search/:searchItem',component:AdminBookComponent},
+  {path:'user/categories',component:UserCategoryComponent}
   
 ]
 

@@ -17,6 +17,7 @@ import { OrderlistComponent } from './components/admin/orderlist/orderlist.compo
 import { AdminUsersComponent } from './components/admin/admin-users/admin-users.component';
 import { CategorySearchComponent } from './components/admin/search/category-search/category-search.component';
 import { BookSearchComponent } from './components/admin/search/book-search/book-search.component';
+import { UserCategoryComponent } from './components/user/user-category/user-category.component';
 
 
 
@@ -36,6 +37,7 @@ import { BookSearchComponent } from './components/admin/search/book-search/book-
     AdminUsersComponent,
     CategorySearchComponent,
     BookSearchComponent,
+    UserCategoryComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
