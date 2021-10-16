@@ -1,4 +1,39 @@
 .sidebar-div{
     color: white;
     padding-top: 10px;
+    border-top-right-radius:10px
+}
+@media screen and (max-width: 940px) {
+    div.sidebar-div {
+      font-size: 10px;
+    }
+  }
+
+
+
+a:hover{
+    text-decoration: none !important;
+    color: rgb(122, 122, 122);
+    background-color: white;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none !important;
+    color: white;
+}
+.a-div{
+    margin: 20px 10%;
+    overflow-wrap: break-word;
+}
+
+.a-div:hover{
+    background-color: white;
+    margin: 20px 3%;
+    border-radius: 10px;
+    padding: 0px 5px;
+    transition: 0.5s;
+    overflow-wrap: unset !important;
+    cursor: pointer;
+    color: rgb(122, 122, 122);
 }
