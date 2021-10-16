@@ -1,75 +1,83 @@
-<div class="row" style="margin-top: 2rem;">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-2">
-      <select name="cat" placeholder="select" style="  font-size: large; " class=" classic">
-        <option *ngFor="let category of Categories">{{category}}</option>
-      </select>
-    </div>
-    <div class="col-lg-6"></div>
-    <div class="col-lg-3">
-      <div class="input-group">
-        <div class="form-outline">
-          <input id="search-input" type="search" id="form1" class="form-control" placeholder="Search" />
-        </div>
-        <button id="search-button" type="button" class="btn btn-primary">
-          <img src="https://cdn1.iconfinder.com/data/icons/web-and-mobile-ui-outline-icon-kit/512/UI_Icons_2-01-512.png"
-            width="20rem" alt="">
-        </button>
+
+
+
+
+
+    <div class="row" >
+      <div class="col-1" style="background-color: rgb(43, 43, 97); border-top-right-radius:20px;border-bottom-right-radius:20px; height: 100%; position: fixed;top: 0;left: 0px;">
+          <app-admin-sidebar></app-admin-sidebar>
       </div>
-    </div>
+      <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 20px; ">
+
+        <app-book-search></app-book-search>
+
+        <div class="row" style="margin-top: 2rem;">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+              <select name="cat" placeholder="select" style="  font-size: large; " class=" classic">
+                <option *ngFor="let category of Categories">{{category}}</option>
+              </select>
+            </div>
+            <div class="col-lg-6"></div>
+            <div class="col-lg-3">
+        
+          </div>
+          <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+              <br>
+              <br>
+          
+          
+              <div class="row">
+          
+                <table class="table table-bordered table-hover table-dark">
+                  <thead>
+                    <tr>
+                      <th *ngFor="let column of headers">{{column}}</th>
+                      <th>Function</th>
+          
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let row of rows">
+                      <td>{{row["ID"]}}</td>
+                      <td>{{row["CategoryId"]}}</td>
+                      <td><img src="{{row['Image']}}" alt="" width="100rem"></td>
+                      <td>{{row["Title"]}}</td>
+                      <td>{{row["Author"]}}</td>
+                      <td>
+                        <div style="width: 100%; overflow-wrap: break-word;">{{row["Description"]}}
+                        </div>
+                      </td>
+                      <td>{{row["ISBN"]}}</td>
+                      <td>{{row["Year"]}}</td>
+                      <td>{{row["Price"]}}</td>
+                      <td>{{row["Position"]}}</td>
+                      <td>{{row["Status"]}}</td>
+                      <td>{{row["Quantity"]}}</td>
+                      <td>{{row["AddedAt"]}}</td>
+                      <td>
+                        <div class="row">
+                          <div style=" cursor: pointer; margin: 5px; margin-left: 2px; background-color: blueviolet;">
+                            <img src="https://www.pdfzorro.com/Images/IconsFunktionen/pdf-edit.webp" width="30px" alt="">
+                          </div>
+          
+                          <div style="cursor: pointer; margin: 5px; margin-left: 2px;" ><img
+                              src="https://lh3.googleusercontent.com/G2jzG8a6-GAA4yhxx3XMJfPXsm6_pluyeEWKr9I5swUGF62d2xo_Qg3Kdnu00HAmDQ"
+                              width="30px" alt=""></div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+          
+          
+          
+          
+              </div>
+            </div>
+
+  
+      </div>
   </div>
-  <div class="row">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10">
-      <br>
-      <br>
-  
-  
-      <div class="row">
-  
-        <table class="table table-bordered table-hover table-dark">
-          <thead>
-            <tr>
-              <th *ngFor="let column of headers">{{column}}</th>
-              <th>Function</th>
-  
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of rows">
-              <td>{{row["ID"]}}</td>
-              <td>{{row["CategoryId"]}}</td>
-              <td><img src="{{row['Image']}}" alt="" width="100rem"></td>
-              <td>{{row["Title"]}}</td>
-              <td>{{row["Author"]}}</td>
-              <td>
-                <div style="width: 100%; overflow-wrap: break-word;">{{row["Description"]}}
-                </div>
-              </td>
-              <td>{{row["ISBN"]}}</td>
-              <td>{{row["Year"]}}</td>
-              <td>{{row["Price"]}}</td>
-              <td>{{row["Position"]}}</td>
-              <td>{{row["Status"]}}</td>
-              <td>{{row["Quantity"]}}</td>
-              <td>{{row["AddedAt"]}}</td>
-              <td>
-                <div class="row">
-                  <div style=" cursor: pointer; margin: 5px; margin-left: 2px; background-color: blueviolet;">
-                    <img src="https://www.pdfzorro.com/Images/IconsFunktionen/pdf-edit.webp" width="30px" alt="">
-                  </div>
-  
-                  <div style="cursor: pointer; margin: 5px; margin-left: 2px;" ><img
-                      src="https://lh3.googleusercontent.com/G2jzG8a6-GAA4yhxx3XMJfPXsm6_pluyeEWKr9I5swUGF62d2xo_Qg3Kdnu00HAmDQ"
-                      width="30px" alt=""></div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-  
-  
-  
-  
-      </div>
-    </div>

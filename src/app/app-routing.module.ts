@@ -15,6 +15,9 @@ const routes:Routes=[
   {path:'admin/categories',component:CategoriesComponent},
   {path:'admin/orders',component:OrderlistComponent},
   { path: 'admin/users', component: AdminUsersComponent },
+  { path: 'admin/book', component: AdminBookComponent},
+  {path:'admin/categories/search/:searchItem',component:CategoriesComponent},
+  {path:'admin/book/search/:searchItem',component:AdminBookComponent}
   
 ]
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -9,7 +10,7 @@ export class CategoriesComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute) { }
 
 
 
@@ -17,6 +18,8 @@ export class CategoriesComponent implements OnInit {
 Description:'Messi is the best player in the world' ,IsChecked:true},
 {Name:'Cristiano',Image:'https://e7.pngegg.com/pngimages/566/296/png-clipart-christiano-ronaldo-cristiano-ronaldo-real-madrid-c-f-portugal-national-football-team-uefa-champions-league-manchester-united-f-c-portugal-face-head-thumbnail.png',
 Description:'Best International player of all time',IsChecked:true}]
+
+public testcat=this.categories
 
 onButtonActivate(category:any)
 {
@@ -34,6 +37,18 @@ onButtonDeactivate(category:any)
 
 
   ngOnInit(): void {
+this.activatedRoute.params.subscribe(params=>{
+  if(params.searchItem)
+  {
+    this.categories=this.testcat.filter(book =>book.Name.toLowerCase().includes(params.searchItem.toLowerCase()))
+    console.log(params)
+  }
+  else
+  {
+    this.categories=this.testcat
+  }
+})
+
   }
 
 }

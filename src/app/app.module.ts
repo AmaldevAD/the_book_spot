@@ -13,6 +13,8 @@ import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-si
 import { AdminBookComponent } from './components/admin/admin-book/admin-book.component'; 
 import { OrderlistComponent } from './components/admin/orderlist/orderlist.component';
 import { AdminUsersComponent } from './components/admin/admin-users/admin-users.component';
+import { CategorySearchComponent } from './components/admin/search/category-search/category-search.component';
+import { BookSearchComponent } from './components/admin/search/book-search/book-search.component';
 
 
 
@@ -27,10 +29,12 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
     AdminBookComponent,
     AdminSidebarComponent,
     OrderlistComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    CategorySearchComponent,
+    BookSearchComponent,
   ],
   imports: [
-    BrowserModule,FormsModule,
+    BrowserModule,FormsModule,AppRoutingModule,
 
   
   
