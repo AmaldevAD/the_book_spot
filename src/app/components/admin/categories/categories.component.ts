@@ -9,8 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoriesComponent implements OnInit {
 
 
+  url:any
 
-  constructor(private activatedRoute:ActivatedRoute) { }
+
+  constructor(private activatedRoute:ActivatedRoute) {this.url="assets/images/categories/defeault-cat.png" }
 
 
 
@@ -50,5 +52,36 @@ this.activatedRoute.params.subscribe(params=>{
 })
 
   }
+
+  tempCat:any
+
+  passCat(category:any)
+  {
+    this.tempCat=category
+  }
+
+
+
+  imagePath:any;
+  onSelectFile(e: any) {
+    if (e.target.files) {
+      //this.url=e.target.files[0].name; 
+      //console.log(e.target.value);
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0])
+      this.imagePath=e.target.files[0].name
+      console.log(e.target.files[0].name);
+     // this.bookModel.image=e.target.files[0].name;
+      //console.log(e.target.files[0]);
+      reader.onload = (event: any) => {
+
+        this.url = event.target.result;
+        //console.log(this.url);
+      }
+    }
+  }
+
+
+
 
 }
