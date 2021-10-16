@@ -6,6 +6,7 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
 import { AdminBookComponent } from './components/admin/admin-book/admin-book.component';
 import { CategoriesComponent } from './components/admin/categories/categories.component';
 import { OrderlistComponent } from './components/admin/orderlist/orderlist.component';
+import { UserCategoryComponent } from './components/user/user-category/user-category.component';
 
 
 const routes:Routes=[
@@ -15,9 +16,10 @@ const routes:Routes=[
   {path:'admin/categories',component:CategoriesComponent},
   {path:'admin/orders',component:OrderlistComponent},
   { path: 'admin/users', component: AdminUsersComponent },
-  { path: 'admin/book', component: AdminBookComponent},
+  { path: 'admin/books', component: AdminBookComponent},
   {path:'admin/categories/search/:searchItem',component:CategoriesComponent},
-  {path:'admin/book/search/:searchItem',component:AdminBookComponent}
+  {path:'admin/book/search/:searchItem',component:AdminBookComponent},
+  {path:'user/categories',component:UserCategoryComponent}
   
 ]
 
