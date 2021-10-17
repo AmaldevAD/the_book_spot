@@ -20,6 +20,7 @@ import { BookSearchComponent } from './components/admin/search/book-search/book-
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
+import { RegisterComponent } from './components/user/register/register.component';
 
 
 
@@ -42,6 +43,7 @@ import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar
     UserCategoryComponent,
     UserHomeComponent,
     UserNavBarComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
