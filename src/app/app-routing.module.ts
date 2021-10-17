@@ -9,10 +9,11 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { CategoriesComponent } from './components/admin/categories/categories.component';
 import { OrderlistComponent } from './components/admin/orderlist/orderlist.component';
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
+import { UserHomeComponent } from './components/user/user-home/user-home.component';
 
 
 const routes:Routes=[
-  {path:'',redirectTo:'admin', pathMatch:'full', },
+  {path:'',redirectTo:'user/home', pathMatch:'full', },
   { path: 'admin', component: AdminComponent },
   {path: 'admin/coupon', component: AdminCouponComponent},
   {path: 'login', component: LoginComponent },
@@ -22,7 +23,8 @@ const routes:Routes=[
   { path: 'admin/users', component: AdminUsersComponent },
   {path:'admin/categories/search/:searchItem',component:CategoriesComponent},
   {path:'admin/book/search/:searchItem',component:AdminBookComponent},
-  {path:'user/categories',component:UserCategoryComponent}
+  {path:'user/categories',component:UserCategoryComponent},
+  {path:'user/home', component:UserHomeComponent}
   
 ]
 

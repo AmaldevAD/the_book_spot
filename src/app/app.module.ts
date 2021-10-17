@@ -18,6 +18,8 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
 import { CategorySearchComponent } from './components/admin/search/category-search/category-search.component';
 import { BookSearchComponent } from './components/admin/search/book-search/book-search.component';
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
+import { UserHomeComponent } from './components/user/user-home/user-home.component';
+import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
 
 
 
@@ -38,6 +40,8 @@ import { UserCategoryComponent } from './components/user/user-category/user-cate
     CategorySearchComponent,
     BookSearchComponent,
     UserCategoryComponent,
+    UserHomeComponent,
+    UserNavBarComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
