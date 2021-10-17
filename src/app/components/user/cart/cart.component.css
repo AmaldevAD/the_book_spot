@@ -69,4 +69,11 @@ ul .remove-button:hover{
     opacity: 1;
     cursor: pointer;
 }
+.quantity
+{
+    border-radius: 40rem;
+    width: 40%;
+    text-align: center;
+    margin-left: .8rem;
+}
 

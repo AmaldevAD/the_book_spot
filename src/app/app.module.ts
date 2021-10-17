@@ -19,6 +19,9 @@ import { CategorySearchComponent } from './components/admin/search/category-sear
 import { BookSearchComponent } from './components/admin/search/book-search/book-search.component';
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
 import { CartComponent } from './components/user/cart/cart.component';
+import { UserHomeComponent } from './components/user/user-home/user-home.component';
+import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
+import { RegisterComponent } from './components/user/register/register.component';
 
 
 
@@ -40,6 +43,9 @@ import { CartComponent } from './components/user/cart/cart.component';
     BookSearchComponent,
     UserCategoryComponent,
     CartComponent,
+    UserHomeComponent,
+    UserNavBarComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
