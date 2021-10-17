@@ -9,6 +9,7 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { CategoriesComponent } from './components/admin/categories/categories.component';
 import { OrderlistComponent } from './components/admin/orderlist/orderlist.component';
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
+import { CartComponent } from './components/user/cart/cart.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { RegisterComponent } from './components/user/register/register.component';
 
@@ -25,9 +26,9 @@ const routes:Routes=[
   {path:'admin/categories/search/:searchItem',component:CategoriesComponent},
   {path:'admin/book/search/:searchItem',component:AdminBookComponent},
   {path:'user/categories',component:UserCategoryComponent},
+  {path:'user/cart',component:CartComponent},
   {path:'user/home', component:UserHomeComponent},
-  {path:'register', component: RegisterComponent}
-  
+  {path:'register', component: RegisterComponent}  
 ]
 
 
