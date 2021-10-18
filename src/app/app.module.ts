@@ -21,6 +21,7 @@ import { UserCategoryComponent } from './components/user/user-category/user-cate
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { AddressComponent } from './components/user/address/address.component';
 
 
 
@@ -44,6 +45,7 @@ import { RegisterComponent } from './components/user/register/register.component
     UserHomeComponent,
     UserNavBarComponent,
     RegisterComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,

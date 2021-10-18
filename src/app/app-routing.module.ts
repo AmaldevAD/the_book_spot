@@ -11,6 +11,7 @@ import { OrderlistComponent } from './components/admin/orderlist/orderlist.compo
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { AddressComponent } from './components/user/address/address.component';
 
 
 const routes:Routes=[
@@ -26,7 +27,8 @@ const routes:Routes=[
   {path:'admin/book/search/:searchItem',component:AdminBookComponent},
   {path:'user/categories',component:UserCategoryComponent},
   {path:'user/home', component:UserHomeComponent},
-  {path:'register', component: RegisterComponent}
+  {path:'register', component: RegisterComponent},
+  {path:'user/address', component: AddressComponent},
   
 ]
 
