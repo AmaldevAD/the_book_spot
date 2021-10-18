@@ -63,8 +63,8 @@
                             height="80px"></div>
                 </div>
                 <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
-                    <input required name='cat-name' type="text" class="form-control  " id="cat-name"
-                        placeholder="Enter Category Name" [(ngModel)]="tempCat.Name"><br>
+                    <input required name='Name' type="text" class="form-control  " id="cat-name"
+                        placeholder="Enter Category Name" #Name='ngModel' [(ngModel)]="tempCat.Name"><br>
                     <input required name="cat-description" type="text" class="form-control" id="cat-description"
                         placeholder="Enter Category Description"><br>
                     <input required name="cat-position" type="number" class="form-control" id="cat-position"

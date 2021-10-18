@@ -1,0 +1,30 @@
+<div  class="container">
+    <ul>
+        <li *ngFor="let cartItem of cart">
+            <div>
+                <img [src]="cartItem.imageUrl" [alt]="cartItem.bookTitle">
+            </div>
+            <div>
+                    {{cartItem.bookTitle}}
+            </div>
+
+            <div>
+                <label for="">Quantity</label>
+                <input type="number" class="quantity" #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
+            </div>
+
+            <div>
+                {{cartItem.price | currency}}
+            </div>
+
+            <div>
+                <button class="remove-button" (click)="removeFromCart(cartItem)">
+                    Remove
+                </button>
+            </div>
+        </li>
+    </ul>
+
+
+
+</div>
