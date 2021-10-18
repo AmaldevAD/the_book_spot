@@ -20,6 +20,7 @@ export class UserHomeComponent implements OnInit {
   // }
 
   @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any> = {} as ElementRef;
+  @ViewChild('widgetsContentRated', { read: ElementRef }) public widgetsContentRated: ElementRef<any> = {} as ElementRef;
 
   public scrollRight(): void {
     this.widgetsContent.nativeElement.scrollTo({ left: (this.widgetsContent.nativeElement.scrollLeft + 150), behavior: 'smooth' });
@@ -28,6 +29,17 @@ export class UserHomeComponent implements OnInit {
 
   public scrollLeft(): void {
     this.widgetsContent.nativeElement.scrollTo({ left: (this.widgetsContent.nativeElement.scrollLeft - 150), behavior: 'smooth' });
+  }
+
+
+  //Rated
+  public scrollRightRated(): void {
+    this.widgetsContentRated.nativeElement.scrollTo({ left: (this.widgetsContentRated.nativeElement.scrollLeft + 150), behavior: 'smooth' });
+    
+  }
+
+  public scrollLeftRated(): void {
+    this.widgetsContentRated.nativeElement.scrollTo({ left: (this.widgetsContentRated.nativeElement.scrollLeft - 150), behavior: 'smooth' });
   }
 
 }
