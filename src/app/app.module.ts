@@ -22,6 +22,9 @@ import { CartComponent } from './components/user/cart/cart.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { HomeFooterComponent } from './components/user/user-home/home-footer/home-footer.component';
+import { UserWishlistComponent } from './components/user/user-wishlist/user-wishlist.component';
+import { UserCheckoutComponent } from './components/user/user-checkout/user-checkout.component';
 
 
 
@@ -46,6 +49,9 @@ import { RegisterComponent } from './components/user/register/register.component
     UserHomeComponent,
     UserNavBarComponent,
     RegisterComponent,
+    HomeFooterComponent,
+    UserWishlistComponent,
+    UserCheckoutComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
