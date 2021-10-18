@@ -23,6 +23,9 @@ import { UserHomeComponent } from './components/user/user-home/user-home.compone
 import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { AddressComponent } from './components/user/address/address.component';
+import { HomeFooterComponent } from './components/user/user-home/home-footer/home-footer.component';
+import { UserWishlistComponent } from './components/user/user-wishlist/user-wishlist.component';
+import { UserCheckoutComponent } from './components/user/user-checkout/user-checkout.component';
 
 
 
@@ -48,6 +51,9 @@ import { AddressComponent } from './components/user/address/address.component';
     UserNavBarComponent,
     RegisterComponent,
     AddressComponent,
+    HomeFooterComponent,
+    UserWishlistComponent,
+    UserCheckoutComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
