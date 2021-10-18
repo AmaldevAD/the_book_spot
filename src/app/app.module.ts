@@ -18,6 +18,7 @@ import { AdminUsersComponent } from './components/admin/admin-users/admin-users.
 import { CategorySearchComponent } from './components/admin/search/category-search/category-search.component';
 import { BookSearchComponent } from './components/admin/search/book-search/book-search.component';
 import { UserCategoryComponent } from './components/user/user-category/user-category.component';
+import { CartComponent } from './components/user/cart/cart.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
 import { RegisterComponent } from './components/user/register/register.component';
@@ -44,6 +45,7 @@ import { UserCheckoutComponent } from './components/user/user-checkout/user-chec
     CategorySearchComponent,
     BookSearchComponent,
     UserCategoryComponent,
+    CartComponent,
     UserHomeComponent,
     UserNavBarComponent,
     RegisterComponent,
