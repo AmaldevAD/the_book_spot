@@ -1,5 +1,5 @@
 .bd {
-    background: #af7e44 url('https://www.templates-preview.com/opencart/300111896/catalog/view/theme/default/images/bg.jpg') 50% 0% repeat;
+    background: #af7e44 url('src/assets/images/appIcons/bg-wood.jpg') 50% 0% repeat;
     color: #fff;
     font-size: 13px;
     line-height: 16px;
@@ -13,12 +13,12 @@
     text-align: center;
     padding-bottom: 40px;
     text-shadow: 1px 1px #bbb3a5;
-    background: url('https://www.templates-preview.com/opencart/300111896/catalog/view/theme/default/images/bg_box_head_1.png') 50% top no-repeat;
+    background: url('src/assets/images/appIcons/heading-board.png') 50% top no-repeat;
     padding-top: 40px;
     margin-top: -50px;
 }
 .box-product {
-    background: url('https://www.templates-preview.com/opencart/300111896/catalog/view/theme/default/images/bg_latest.png') left 185px no-repeat;
+    background: url('src/assets/images/appIcons/table.png') left 185px no-repeat;
     background-size: 100% 100%;
     overflow: auto;
 
@@ -29,10 +29,7 @@
     font-size: 7vh;
 }
 
-.category-wall{
-    background: url(../../../../assets/images/appIcons/wllhang.png) left 185px no-repeat;
-    background-size: 100% 100%;
-}
+
 
 /* @media (max-width: 1199px)
 {
