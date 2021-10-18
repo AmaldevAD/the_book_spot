@@ -12,6 +12,7 @@ import { UserCategoryComponent } from './components/user/user-category/user-cate
 import { CartComponent } from './components/user/cart/cart.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { AddressComponent } from './components/user/address/address.component';
 import { UserWishlistComponent } from './components/user/user-wishlist/user-wishlist.component';
 import { UserCheckoutComponent } from './components/user/user-checkout/user-checkout.component';
 import { UserBookdetailComponent } from './components/user/user-bookdetail/user-bookdetail.component';
@@ -32,6 +33,7 @@ const routes:Routes=[
   {path:'user/cart',component:CartComponent},
   {path:'user/home', component:UserHomeComponent},
   {path:'register', component: RegisterComponent},
+  {path:'user/address', component: AddressComponent},
   {path:'user/wishlist', component: UserWishlistComponent},
   {path:'user/checkout', component: UserCheckoutComponent},
   {path:'user/book-detail', component: UserBookdetailComponent},

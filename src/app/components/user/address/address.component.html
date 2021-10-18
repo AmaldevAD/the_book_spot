@@ -1,0 +1,112 @@
+<div style=" height: 100vh; ">
+    <div class="container ">
+        <br>
+        <br>
+        <H3 class="d-flex justify-content-center">Please Choose Your Default Address</H3>
+        <div class="d-flex justify-content-center row">
+            <div class="card d-flex list " style="width: 60rem; justify-content: center; margin-top: 2rem;">
+                <div class="card-body">
+
+                    <div class="list__label">
+                        <div class="form-check">
+                            <input class="form-check-input " type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Default radio
+                            </label>
+
+                            <div>This is the first address that we are going to write</div>
+
+                            <div class="row">
+                                <div class="col-md-10"></div>
+                                <div class="col-md-2"><button style="justify-content: right;"
+                                        class="btn-danger d-flex">Delete</button></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card d-flex list " style="width: 60rem; justify-content: center;">
+                <div class="card-body">
+
+                    <div class="list__label">
+                        <div class="form-check">
+                            <input class="form-check-input " type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Default radio
+                            </label>
+
+                            <div>This is the first address that we are going to write</div>
+                            <div class="row">
+                                <div class="col-md-10"></div>
+                                <div class="col-md-2"><button style="justify-content: right;"
+                                        class="btn-danger d-flex">Delete</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- add new address-->
+            <div class="card d-flex list2 " style="width: 60rem; justify-content: center;">
+                <div class="card-body">
+
+                    <div class="list__label">
+                        <div type="button" data-toggle="modal" data-target="#categoryModal">
+                            <div class="row d-flex justify-content-center add-text-div">
+                                <div><i class="bi bi-activity"></i></div>
+                                <div class="text-block">
+                                    Add Address
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- add model -->
+                        <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog"
+                            aria-labelledby="categoryModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Add Address</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <form #catForm="ngForm" class="form-class">
+
+                                            <div class="form-group col-lg-10"
+                                                style="margin-left: 50px; margin-top: 20px;">
+                                                <textarea name="address1" class="form-control" id="address1" cols="40"
+                                                    rows="3" placeholder="Type your Address"></textarea><br>
+                                                <input required name="saveaddress" type="text" class="form-control"
+                                                    id="saveaddress" placeholder="Address Name to be saved as"
+                                                    cols="50">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button id="addaddress" type="button" class="btn btn-dark">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div col-5> <button class="btn btn-primary" style="margin-right: 1rem;">Save as Default Address</button>
+            <button class="btn btn-secondary" (click)="navigate( 'user/home' )">Back To Home</button></div>
+        </div>
+    </div>
+</div>
