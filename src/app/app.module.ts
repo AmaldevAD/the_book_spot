@@ -26,6 +26,7 @@ import { AddressComponent } from './components/user/address/address.component';
 import { HomeFooterComponent } from './components/user/user-home/home-footer/home-footer.component';
 import { UserWishlistComponent } from './components/user/user-wishlist/user-wishlist.component';
 import { UserCheckoutComponent } from './components/user/user-checkout/user-checkout.component';
+import { UserBookdetailComponent } from './components/user/user-bookdetail/user-bookdetail.component';
 
 
 
@@ -54,6 +55,7 @@ import { UserCheckoutComponent } from './components/user/user-checkout/user-chec
     HomeFooterComponent,
     UserWishlistComponent,
     UserCheckoutComponent,
+    UserBookdetailComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,
