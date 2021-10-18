@@ -1,1 +1,92 @@
-<p>user-checkout works!</p>
+<app-user-nav-bar></app-user-nav-bar>
+
+<div class=" row" style="margin-top: 40px; margin-bottom: 40px;">
+    <div class="col-9" style="margin-left: 40px;">
+        <div class="card" style="padding: 20px;">
+
+            <div class="headings">Address</div>
+            <hr>
+            <address style="margin-left: 10px;">
+                Jon Doe <br>
+                Visit us at:<br>
+                Example.com<br>
+                Box 564, Disneyland<br>
+                USA
+            </address>
+
+            <a style="margin-left: 10px;" href="">Select different Address</a>
+
+
+            <div style="margin-top: 30px;" class="headings">Cart Items</div>
+            <hr>
+            <div style="padding: 10px 30px; margin-left: 10px;">
+                <div class="row">
+                    <div class="row  col-9 d-flex justify-content-start align-items-center"
+                        style="background-color: brown;">
+                        <img height="90px" width="auto"
+                            src="https://kbimages1-a.akamaihd.net/fdf06d9a-d900-48dd-94fb-1c14eb5b94ba/1200/1200/False/the-da-vinci-code.jpg"
+                            alt="Card image cap">
+                        <div style="margin-left: 20px;">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </div>
+                    <div class="col-1  d-flex justify-content-center align-items-center"
+                        style="background-color: aquamarine;">
+                        qty
+                    </div>
+
+                    <div class="col-2 d-flex justify-content-center align-items-center"
+                        style="background-color: antiquewhite;">
+                        <div>{{221 | currency :'INR'}} </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- end of cart item -->
+            <div>
+                <div style="margin-top: 30px;" class="headings">Coupon</div>
+                <hr>
+                <div class="row" style="margin-left: 10px;">
+                    <div class="form-group" style="width: 30%;">
+                        <input type="text" class="form-control" id="couponCode" placeholder="Enter Code">
+                    </div>
+                    <button style="height: 40px; margin-left: 20px; border-radius: 10px;" class="btn btn-dark "> Apply</button>
+                </div>
+               
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="col-2" style="text-align: center;">
+        <div class="card" style="padding: 20px;">
+            <div class="headings" style="font-size: x-large;"> Sub Total</div>
+            <hr>
+            <div class="row d-flex justify-content-between" style="margin: 0px 10px">
+                <div>Total</div>
+                <div>{{1000| currency:'INR'}}</div>
+            </div>
+            <div class="row d-flex justify-content-between" style="margin: 0px 10px">
+                <div>Discount</div>
+                <div>{{-200| currency:'INR'}}</div>
+            </div>
+            <hr>
+            <div class="row d-flex justify-content-between" style="margin: 0px 10px">
+                <div>To Payl</div>
+                <div>{{800| currency:'INR'}}</div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button style="border-radius: 10px ;" class="btn-block  btn-dark"> Place order</button>
+        </div>
+    </div>
+
+
+
+</div>
