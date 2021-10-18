@@ -22,6 +22,7 @@ import { CartComponent } from './components/user/cart/cart.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { UserNavBarComponent } from './components/user/user-nav-bar/user-nav-bar.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { NotfoundComponent } from './components/user/notfound/notfound.component';
 
 
 
@@ -46,6 +47,7 @@ import { RegisterComponent } from './components/user/register/register.component
     UserHomeComponent,
     UserNavBarComponent,
     RegisterComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,

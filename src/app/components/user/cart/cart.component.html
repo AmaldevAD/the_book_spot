@@ -1,16 +1,17 @@
+<div class="fullcontainer">
 <div  class="container">
     <ul>
         <li *ngFor="let cartItem of cart">
             <div>
                 <img [src]="cartItem.imageUrl" [alt]="cartItem.bookTitle">
             </div>
-            <div>
+            <div class="title">
                     {{cartItem.bookTitle}}
             </div>
 
-            <div>
-                <label for="">Quantity</label>
-                <input type="number" class="quantity" #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
+            <div class="form-group">
+                <label for="" >Quantity</label>
+                <input type="number" class="quantity" #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)" value="1">
             </div>
 
             <div>
@@ -18,12 +19,23 @@
             </div>
 
             <div>
-                <button class="remove-button" (click)="removeFromCart(cartItem)">
+               <!-- <button class="(click)="removeFromCart(cartItem)"" (click)="removeFromCart(cartItem)">
                     Remove
-                </button>
+                </button>-->
+                <i class="bil bi-cart-x" id="remove-button"(click)="removeFromCart(cartItem)" style="font-size:30px;"></i>
             </div>
         </li>
     </ul>
+    <div class="checkout">
+        <div>
+            <div class="foods-count">hhh</div>
+            <div class="total-price">hhh</div>
+        </div>
+    </div>
+ 
+
+
+</div>
 
 
 
