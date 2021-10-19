@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
@@ -60,7 +63,7 @@ import { UserBookdetailComponent } from './components/user/user-bookdetail/user-
     UserBookdetailComponent
   ],
   imports: [
-    BrowserModule, FormsModule, AppRoutingModule,
+    BrowserModule, FormsModule, AppRoutingModule,HttpClientModule,
 
 
 
