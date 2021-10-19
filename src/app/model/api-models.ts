@@ -1,4 +1,4 @@
 export class ApiModel{
 
-    localhost = "ur";
+    localhost = "http://localhost:65092/";
 }
