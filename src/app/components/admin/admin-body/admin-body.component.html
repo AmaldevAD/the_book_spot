@@ -24,7 +24,8 @@
         </div>
 
         <!-- add coupon -->
-        <div type="button" data-toggle="modal" data-target="#couponModal" class="card card-style grad-3 d-flex justify-content-center">
+        <div type="button" data-toggle="modal" data-target="#couponModal"
+            class="card card-style grad-3 d-flex justify-content-center">
             <div class="row d-flex justify-content-center add-text-div">
                 <div>+ &nbsp;</div>
                 <div class="text-block">
@@ -65,18 +66,18 @@
                 <form #catForm="ngForm" class="form-class">
                     <div class="row " style="background-color: azure;">
                         <div class="col-8 d-flex align-items-center justify-content-center">
-                            <input required type="file" accept="*.png.jpg">
+                            <input (change)="onSelectFile($event)" required type="file" accept="*.png.jpg">
                         </div>
-                        <div class="col-4"> <img (change)="onSelectFile($event)" [src]="url" alt="" width="80px"
-                                height="80px"></div>
+                        <div class="col-4"> <img [src]="url" alt="" width="80px" height="80px"></div>
                     </div>
                     <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
-                        <input required name='cat-name' type="text" class="form-control  " id="cat-name"
-                            placeholder="Enter Category Name"><br>
-                        <input required name="cat-description" type="text" class="form-control" id="cat-description"
+                        <input required #catName='ngModel' [(ngModel)]='catModel.catName' name='catName' type="text"
+                            class="form-control  " id="catName" placeholder="Enter Category Name"><br>
+                        <input required #catDescription='ngModel' [(ngModel)]='catModel.catDescription'
+                            name="catDescription" type="text" class="form-control" id="catDescription"
                             placeholder="Enter Category Description"><br>
-                        <input required name="cat-position" type="number" class="form-control" id="cat-position"
-                            placeholder="Enter Catrgory position">
+                        <input required #catPosition='ngModel' [(ngModel)]='catModel.catPositon' name="catPosition"
+                            type="number" class="form-control" id="catPosition" placeholder="Enter Catrgory position">
                     </div>
                 </form>
 
@@ -84,7 +85,8 @@
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button [disabled]='catForm.invalid' id="addcat" type="button" class="btn btn-dark">Add</button>
+                <button (click)="addCategory()" [disabled]='catForm.invalid' data-dismiss="modal" id="addcat"
+                    type="button" class="btn btn-dark">Add</button>
             </div>
         </div>
     </div>
@@ -110,18 +112,39 @@
                 <form #bookForm="ngForm" class="form-class">
                     <div class="row " style="background-color: azure;">
                         <div class="col-8 d-flex align-items-center justify-content-center">
-                            <input required type="file" accept="*.png.jpg">
+                            <input (change)="onSelectFile($event)" required type="file" accept="*.png.jpg">
                         </div>
-                        <div class="col-4"> <img (change)="onSelectFile($event)" [src]="url" alt="" width="80px"
+                        <div class="col-4"> <img  [src]="url" alt="" width="80px"
                                 height="80px"></div>
                     </div>
                     <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
-                        <input required name='book-title' type="text" class="form-control  " id="book-title"
+                        <input #bookTitle='ngModel' [(ngModel)]='bookModel.bookTitle' required name='bookTitle' type="text" class="form-control  " id="book-title"
                             placeholder="Enter Book Titile"><br>
-                        <input required name="book-author" type="text" class="form-control" id="book-authoe"
+                        <input #bookAuthor='ngModel' [(ngModel)]='bookModel.bookAuthor' required name='bookAuthor' required name="bookAuthor" type="text" class="form-control" id="bookAuthor"
                             placeholder="Enter Book Author"><br>
-                        <input required name="book-position" type="number" class="form-control" id="book-position"
+
+                            <input #bookISBN='ngModel' [(ngModel)]='bookModel.bookISBN' required name='bookISBN' required name="bookISBN" type="text" class="form-control" id="bookISBN"
+                            placeholder="Enter book ISBN"><br>
+
+                            <input #bookPrice='ngModel' [(ngModel)]='bookModel.bookPrice' required name="bookPrice" type="number" class="form-control" id="bookPrice"
+                            placeholder="Enter Price">
+
+                            <input style="margin-top: 20px;" #bookYear='ngModel' [(ngModel)]='bookModel.bookYear' required name="bookYear" type="number" class="form-control" id="bookYear"
+                            placeholder="Enter Year">
+
+                        <input style="margin-top: 20px;" bookDesc='ngModel' [(ngModel)]='bookModel.bookDes' required name="bookDesc" type="text" class="form-control" id="bookDesc"
+                            placeholder="Enter Book Description"><br>
+
+                        <input #bookPosition='ngModel' [(ngModel)]='bookModel.bookPos' required name="bookPosition" type="number" class="form-control" id="bookPosition"
                             placeholder="Enter Catrgory position">
+
+                            <input style="margin-top: 20px;" #bookQty='ngModel' [(ngModel)]='bookModel.bookQty' required name="bookQty" type="number" class="form-control" id="bookQty"
+                            placeholder="Enter Quantity">
+                        <select (change)='changeCat($event)' style="margin-top: 20px;" class="custom-select">
+                            <option selected>Select</option>
+                            <option *ngFor="let cat of categories" value="{{cat.categoryId}}">{{cat.categoryName}}
+                            </option>
+                        </select>
                     </div>
                 </form>
 
@@ -129,7 +152,7 @@
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button [disabled]='bookForm.invalid' id="addcat" type="button" class="btn btn-dark">Add</button>
+                <button (click)='addBook()' [disabled]='bookForm.invalid' data-dismiss="modal" id="addcat" type="button" class="btn btn-dark">Add</button>
             </div>
         </div>
     </div>
@@ -154,12 +177,13 @@
 
 
                 <form #couponForm="ngForm" class="form-class">
-                   
+
                     <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
-                        <input required name='coupon-name' type="text" class="form-control  " id="coupon-name"
-                            placeholder="Enter Coupon Code"><br>
-                       
-                        <input required name="coupon-percentage" type="number" class="form-control" id="coupon-percentage"
+                        <input required #couponName='ngModel' [(ngModel)]='couponModel.name' name='couponName'
+                            type="text" class="form-control  " id="couponName" placeholder="Enter Coupon Code"><br>
+
+                        <input required #couponPercentage='ngModel' [(ngModel)]='couponModel.percentage'
+                            name="couponPercentage" type="number" class="form-control" id="couponPercentage"
                             placeholder="Enter Coupon Percentage">
                     </div>
                 </form>
@@ -168,7 +192,8 @@
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button [disabled]='couponForm.invalid' id="addcat" type="button" class="btn btn-dark">Add</button>
+                <button data-dismiss="modal" (click)="addCoupon()" [disabled]='couponForm.invalid' id="addcat"
+                    type="button" class="btn btn-dark">Add</button>
             </div>
         </div>
     </div>
