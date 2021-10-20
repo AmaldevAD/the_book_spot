@@ -100,6 +100,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\categories.cs" />
+    <Compile Include="Models\Coupon.cs" />
+    <Compile Include="Models\CouponRepos.cs" />
+    <Compile Include="Models\ICoupon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
