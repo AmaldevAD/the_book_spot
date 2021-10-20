@@ -18,36 +18,36 @@
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
-                <tbody class="center-block" style="text-align: center; " *ngFor="let message of messages | slice: (messages.length > 5 ? messages.length - 5 : 0); index as i">
-                    <tr>
-                        <th scope="row" [width]=50>{{i+1}}</th>
+                <tbody class="center-block" style="text-align: center; " >
+                    <tr *ngFor="let user of users">
+                        <th scope="row" [width]=50>{{user.userID}}</th>
                         <td scope="col" [width]="210">
                             <div >
-                                hii asdjbdas 
+                                {{user.name}} 
                             </div>
                         </td>
                         <td scope="col" [width]="210">
                             <div >
-                                email
+                                {{user.email}} 
                             </div>
                         </td>
                         <td scope="col" [width]="150">
                             <div >
-                                1234567890
+                                {{user.phone}}
                             </div>
                         </td>
                         <td scope="col" [width]="500">
                             <div >
-                                Addresss1 Addresss1 Addresss1 Addresss1 Addresss1 Addresss1 Addresss1
+                                {{user.address}}
                             </div>
                         </td>
                         <td scope="col">
-                            <div *ngIf="i<3">
+                            <div >
                                 <button class="btn btn-danger">Deactivate</button>
                             </div>
-                            <div *ngIf="i>=3">
+                            <!-- <div *ngIf="i>=3">
                                 <button class="btn btn-success">Activate</button>
-                            </div>
+                            </div> -->
                         </td>
                     </tr>
                 </tbody>

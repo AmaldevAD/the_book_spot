@@ -6,18 +6,17 @@ import {ApiModel} from 'src/app/model/api-models'
 @Injectable({
   providedIn: 'root'
 })
-export class UserHomeServicesService {
+export class AdminUserService {
 
   apiModel = new ApiModel()
   constructor(private http:HttpClient ) { }
 
-  getCategoriest():Observable<any>{
+
+  getUsers():Observable<any>{
     
-    return this.http.get<any>(this.apiModel.localhost+"api/categories")
+    return this.http.get<any>(this.apiModel.localhost+"users/getUsers")
   }
 
-  getBooks():Observable<any>{
-    return this.http.get<any>(this.apiModel.localhost+"api/book")
-  }
+
 
 }

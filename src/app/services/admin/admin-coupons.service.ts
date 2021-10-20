@@ -6,18 +6,14 @@ import {ApiModel} from 'src/app/model/api-models'
 @Injectable({
   providedIn: 'root'
 })
-export class UserHomeServicesService {
+export class AdminCouponsService {
 
   apiModel = new ApiModel()
   constructor(private http:HttpClient ) { }
 
-  getCategoriest():Observable<any>{
+  getCoupons():Observable<any>{
     
-    return this.http.get<any>(this.apiModel.localhost+"api/categories")
-  }
-
-  getBooks():Observable<any>{
-    return this.http.get<any>(this.apiModel.localhost+"api/book")
+    return this.http.get<any>(this.apiModel.localhost+"api/Coupon")
   }
 
 }

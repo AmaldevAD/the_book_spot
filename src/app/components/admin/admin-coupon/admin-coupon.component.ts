@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminCouponsService } from 'src/app/services/admin/admin-coupons.service';
 
 @Component({
   selector: 'app-admin-coupon',
@@ -8,13 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class AdminCouponComponent implements OnInit {
   headers : any ;
   rows : any;
-  constructor() { 
+  coupons:any
+  constructor( private service:AdminCouponsService) { 
    this.headers = ['CouponId','Name','Percentage %OFF','Status'];
-   this.rows = [{"CouponId":'1',"Name":'Flat50',"Percentage":'50',"Status":'1'},
-   {"CouponId":'2',"Name":'40Bonanza',"Percentage":'40',"Status":'0'}]
+  
   }
 
   ngOnInit(): void {
+    this.service.getCoupons().subscribe((data)=>{
+      this.coupons=data;
+    })
   }
 
 }

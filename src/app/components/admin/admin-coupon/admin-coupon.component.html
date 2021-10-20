@@ -4,17 +4,19 @@
         <app-admin-sidebar></app-admin-sidebar>
     </div>
     <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 50px; display: block; z-index: -1; ">
+        <h3>Coupon</h3>
+        <hr>
         <div>
             <table class="table table-bordered table-dark  table-hover">
                 <thead>
-                    <th style="text-align: center;" *ngFor = "let head of headers">{{head}}</th>
+                    <th style="text-align: center;" *ngFor="let head of headers">{{head}}</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let row of rows">
-                        <td style="text-align: center;">{{row["CouponId"]}}</td>
-                        <td style="text-align: center;">{{row["Name"]}}</td>
-                        <td style="text-align: center;">{{row["Percentage"]}}</td>
-                        <td style="text-align: center;">{{row["Status"]}}</td>
+                    <tr *ngFor="let coupon of coupons">
+                        <td style="text-align: center;">{{coupon.couponId}}</td>
+                        <td style="text-align: center;">{{coupon.name}}</td>
+                        <td style="text-align: center;">{{coupon.percentage}}</td>
+                        <td style="text-align: center;">{{coupon.status}}</td>
                     </tr>
                 </tbody>
             </table>

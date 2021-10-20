@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+
+
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminUsersComponent } from './components/admin/admin-users/admin-users.component';
 import { AdminBookComponent } from './components/admin/admin-book/admin-book.component';
@@ -29,14 +32,14 @@ const routes:Routes=[
   { path: 'admin/users', component: AdminUsersComponent },
   {path:'admin/categories/search/:searchItem',component:CategoriesComponent},
   {path:'admin/book/search/:searchItem',component:AdminBookComponent},
-  {path:'user/categories',component:UserCategoryComponent},
-  {path:'user/cart',component:CartComponent},
+  {path:'user/categories',component:UserCategoryComponent,canActivate:[AuthGuard]},
+  {path:'user/cart',component:CartComponent,canActivate:[AuthGuard]},
   {path:'user/home', component:UserHomeComponent},
   {path:'register', component: RegisterComponent},
-  {path:'user/address', component: AddressComponent},
-  {path:'user/wishlist', component: UserWishlistComponent},
-  {path:'user/checkout', component: UserCheckoutComponent},
-  {path:'user/book-detail', component: UserBookdetailComponent},
+  {path:'user/address', component: AddressComponent,canActivate:[AuthGuard]},
+  {path:'user/wishlist', component: UserWishlistComponent,canActivate:[AuthGuard]},
+  {path:'user/checkout', component: UserCheckoutComponent,canActivate:[AuthGuard]},
+  {path:'user/book-detail', component: UserBookdetailComponent,canActivate:[AuthGuard]},
 ]
 
 
