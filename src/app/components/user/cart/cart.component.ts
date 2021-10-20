@@ -17,13 +17,12 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.services.getCartItemList(1).subscribe((data)=>{
+      console.log(data)
       this.cart=data
     }
 )}
 
-  setCart() {
-    //call service to initialise cart array
-  }
+ 
   changeQuantity(cartItem: any, quantity: string) {
 
 
