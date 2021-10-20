@@ -1,0 +1,26 @@
+<app-user-nav-bar></app-user-nav-bar>
+<div class="wrapper">
+    <div class="container">
+        <div class="row g-1">
+            <div class="col-md-3 itemlist"  *ngFor="let item of items">
+                <div class="card p-3">
+                    <i *ngIf ="!addedtowishlist"class="far fa-heart text-right" (click) = addtowishlist()></i>
+                    <i *ngIf ="addedtowishlist" class="fas fa-heart text-right" (click) = removefromwishlist() ></i>
+                    <div class="text-center"> <img src="https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png" width="200"> </div>
+                    <div class="product-details"> <span class="font-weight-bold d-block">{{item.bookPrice | currency :"INR"}}</span> 
+                        <h3 class="font-weight-bold d-block card-title">{{item.bookTitle}}</h3>
+                        <h4 class="font-weight-bold d-block">{{item.bookAuthor}}</h4>
+                        <div class="buttons d-flex flex-row">
+                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> 
+                            <button
+                                class="btn btn-success cart-button btn-block">Know More
+                            </button>
+                            
+                        </div>
+                        <div class="weight"> <small>check out my book</small> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

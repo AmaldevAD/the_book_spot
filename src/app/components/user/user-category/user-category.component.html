@@ -1,16 +1,16 @@
 <ul>
     <li *ngFor="let category of categories">
-        <a routerLink="/">
-            <img src="{{category.Image}}" alt="">
+        <a (click)="onCatClick(category.categoryId)">
+            <img src="{{category.image}}" alt="Image Not Found" >
             <div class="content">
                 <div class="name">
-                   {{category.Name}}
+                   {{category.categoryName}}
                 </div>
 
-                <div class="product-item-footer">
+                <div class="product-item-footer" (click)="onCatClick(category.categoryId)">
                     <div class="origins">
                         <span >
-                            {{category.Description}}
+                            {{category.description}}
                         </span>
                     </div>
 

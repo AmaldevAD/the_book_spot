@@ -20,4 +20,11 @@ export class AdminBooklistService {
     return this.http.get<any>(this.apiModel.localhost+"api/book/"+Id)
   }
 
+  deleteBook(Id:number):Observable<any>{
+    
+    return this.http.delete<any>(this.apiModel.localhost+"api/book/"+Id)
+  }
+
+
+
 }

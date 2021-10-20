@@ -62,5 +62,10 @@ export class AdminBookComponent implements OnInit {
 
 }
 
+deleteBook(Id:number)
+{
+  this.servicesbook.deleteBook(Id).subscribe()
+}
+
 }
 

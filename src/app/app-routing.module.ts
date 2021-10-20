@@ -17,6 +17,7 @@ import { UserWishlistComponent } from './components/user/user-wishlist/user-wish
 import { UserCheckoutComponent } from './components/user/user-checkout/user-checkout.component';
 import { UserBookdetailComponent } from './components/user/user-bookdetail/user-bookdetail.component';
 import { UserListingComponent } from './components/user/user-listing/user-listing.component';
+import { CatgrorybasedbooklistComponent } from './components/user/catgrorybasedbooklist/catgrorybasedbooklist.component';
 
 
 const routes:Routes=[
@@ -38,7 +39,8 @@ const routes:Routes=[
   {path:'user/wishlist', component: UserWishlistComponent},
   {path:'user/checkout', component: UserCheckoutComponent},
   {path:'user/book-detail', component: UserBookdetailComponent},
-  {path:'user/user-list' , component: UserListingComponent }
+  {path:'user/user-list' , component: UserListingComponent },
+  {path:'user/catbasedbooklist/:catId' , component: CatgrorybasedbooklistComponent}
 ]
 
 
