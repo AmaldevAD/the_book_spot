@@ -14,7 +14,6 @@ export class BookSearchComponent implements OnInit {
   public searchTerm:String=""
 
   search():void{
-    console.log(this.searchTerm)
 
     if(this.searchTerm)
     this.router.navigateByUrl('admin/book/search/' + this.searchTerm);

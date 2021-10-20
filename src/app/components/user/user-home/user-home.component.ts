@@ -17,6 +17,7 @@ export class UserHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('user'))
     this.getCategories();
     this.getBooks();
   }

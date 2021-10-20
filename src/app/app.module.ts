@@ -31,6 +31,9 @@ import { HomeFooterComponent } from './components/user/user-home/home-footer/hom
 import { UserWishlistComponent } from './components/user/user-wishlist/user-wishlist.component';
 import { UserCheckoutComponent } from './components/user/user-checkout/user-checkout.component';
 import { UserBookdetailComponent } from './components/user/user-bookdetail/user-bookdetail.component';
+import { SearchComponent } from './components/user/search/search.component';
+import { UserListingComponent } from './components/user/user-listing/user-listing.component';
+import { CatgrorybasedbooklistComponent } from './components/user/catgrorybasedbooklist/catgrorybasedbooklist.component';
 
 
 
@@ -60,7 +63,10 @@ import { UserBookdetailComponent } from './components/user/user-bookdetail/user-
     HomeFooterComponent,
     UserWishlistComponent,
     UserCheckoutComponent,
-    UserBookdetailComponent
+    UserBookdetailComponent,
+    SearchComponent,
+    UserListingComponent,
+    CatgrorybasedbooklistComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,HttpClientModule,

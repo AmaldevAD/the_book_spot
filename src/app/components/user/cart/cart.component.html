@@ -1,3 +1,5 @@
+<app-user-nav-bar></app-user-nav-bar>
+
 <div class="fullcontainer">
 <div  class="container">
     <ul>
@@ -11,11 +13,11 @@
 
             <div class="form-group">
                 <label for="" >Quantity</label>
-                <input type="number" class="quantity" #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)" value="1">
+                <input type="number" class="quantity" #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)" value="{{cartItem.bookQuantity}}">
             </div>
 
             <div>
-                {{cartItem.price | currency}}
+                {{cartItem.bookPrice * cartItem.bookQuantity | currency:"INR"}}
             </div>
 
             <div>

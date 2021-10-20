@@ -6,7 +6,7 @@
 
 
   <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 20px; ">
-    <h3>Orders</h3>
+    <h3>Books</h3>
     <hr>
     <div class="row">
       <div>
@@ -40,54 +40,61 @@
 
 
           <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+              <br>
+              <br>
+          
+          
+              <div class="row">
+          
+                <table class="table table-bordered table-hover table-dark">
+                  <thead>
+                    <tr>
+                      <th *ngFor="let column of headers">{{column}}</th>
+                      <th>Function</th>
+          
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let row of rows">
+                      <td>{{row["bookId"]}}</td>
+                      <td>{{row["catId"]}}</td>
+                      <td><img src="{{image_url}}" alt="" width="100rem"></td>
+                      <td>{{row["bookTitle"]}}</td>
+                      <td>{{row["bookAuthor"]}}</td>
+                      <td>
+                        <div style="width: 100%; overflow-wrap: break-word;">{{row["bookDescription"]}}
+                        </div>
+                      </td>
+                      <td>{{row["bookIsbn"]}}</td>
+                      <td>{{row["bokkYear"]}}</td>
+                      <td>{{row["bookPrice"]}}</td>
+                      <td>{{row["bookPosition"]}}</td>
+                      <td>{{row["bookStatus"]}}</td>
+                      <td>{{row["bookQuantity"]}}</td>
+                      <td>{{row["bookAddedAt"]}}</td>
+                      <td>
+                        <div class="row">
+                          <div style=" cursor: pointer; margin: 5px; margin-left: 2px; background-color: blueviolet;">
+                            <img src="https://www.pdfzorro.com/Images/IconsFunktionen/pdf-edit.webp" width="30px" alt="">
+                          </div>
+          
+                          <div style="cursor: pointer; margin: 5px; margin-left: 2px;" ><img
+                              src="https://lh3.googleusercontent.com/G2jzG8a6-GAA4yhxx3XMJfPXsm6_pluyeEWKr9I5swUGF62d2xo_Qg3Kdnu00HAmDQ"
+                              width="30px" alt="" (click)=deleteBook(row.bookId)></div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+          
+          
+          
+          
+              </div>
+            </div>
 
-            <table class="table table-bordered table-hover table-dark">
-              <thead>
-                <tr>
-                  <th *ngFor="let column of headers">{{column}}</th>
-                  <th>Function</th>
-
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let row of rows">
-                  <td>{{row["bookId"]}}</td>
-                  <td>{{row["catId"]}}</td>
-                  <td><img src="{{image_url}}" alt="" width="100rem"></td>
-                  <td>{{row["bookTitle"]}}</td>
-                  <td>{{row["bookAuthor"]}}</td>
-                  <td>
-                    <div style="width: 100%; overflow-wrap: break-word;">{{row["bookDescription"]}}
-                    </div>
-                  </td>
-                  <td>{{row["bookIsbn"]}}</td>
-                  <td>{{row["bokkYear"]}}</td>
-                  <td>{{row["bookPrice"]}}</td>
-                  <td>{{row["bookPosition"]}}</td>
-                  <td>{{row["bookStatus"]}}</td>
-                  <td>{{row["bookQuantity"]}}</td>
-                  <td>{{row["bookAddedAt"]}}</td>
-                  <td>
-                    <div class="row">
-                      <div style=" cursor: pointer; margin: 5px; margin-left: 2px; background-color: blueviolet;">
-                        <img src="https://www.pdfzorro.com/Images/IconsFunktionen/pdf-edit.webp" width="30px" alt="">
-                      </div>
-
-                      <div style="cursor: pointer; margin: 5px; margin-left: 2px;"><img
-                          src="https://lh3.googleusercontent.com/G2jzG8a6-GAA4yhxx3XMJfPXsm6_pluyeEWKr9I5swUGF62d2xo_Qg3Kdnu00HAmDQ"
-                          width="30px" alt=""></div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-
-
-
-          </div>
-        </div>
-
-
+  
       </div>
     </div>
