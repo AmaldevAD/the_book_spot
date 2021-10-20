@@ -1,29 +1,44 @@
+<div class="row">
+  <div class="col-1"
+    style="background-color: rgb(43, 43, 97); border-top-right-radius:20px;border-bottom-right-radius:20px; height: 100%; position: fixed;top: 0;left: 0px;">
+    <app-admin-sidebar></app-admin-sidebar>
+  </div>
 
 
-
-
-
-    <div class="row" >
-      <div class="col-1" style="background-color: rgb(43, 43, 97); border-top-right-radius:20px;border-bottom-right-radius:20px; height: 100%; position: fixed;top: 0;left: 0px;">
-          <app-admin-sidebar></app-admin-sidebar>
+  <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 20px; ">
+    <h3>Books</h3>
+    <hr>
+    <div class="row">
+      <div>
+        <div class="">
+          <select name="cat" placeholder="select" style="  font-size: medium; " class=" classic"
+            (change)="changedropdown($event)">
+            <option value="0">All</option>
+            <option *ngFor="let category of Categories" value={{category.categoryId}}>{{category.categoryName}}</option>
+          </select>
+        </div>
       </div>
-      <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 20px; ">
-
+      <div style="margin-left: 20px;">
         <app-book-search></app-book-search>
+      </div>
+     
+    </div>
 
-        <div class="row" style="margin-top: 2rem;">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-2">
-              <select name="cat" placeholder="select" style="  font-size: large; " class=" classic" (change)="changedropdown($event)">
-                <option value="0">All</option>
-                <option *ngFor="let category of Categories" value={{category.categoryId}} >{{category.categoryName}}</option>
 
-              </select>
-            </div>
-            <div class="col-lg-6"></div>
-            <div class="col-lg-3">
-        
-          </div>
+
+    <div class="row" style="margin-top: 2rem;">
+      <div class="col-lg-1"></div>
+
+      <div class="col-lg-6"></div>
+      <div class="col-lg-3">
+
+      </div>
+      <div class="row">
+        <div style="margin-left: 20px;" class="">
+          <br>
+          <br>
+
+
           <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
@@ -82,4 +97,4 @@
 
   
       </div>
-  </div>
+    </div>

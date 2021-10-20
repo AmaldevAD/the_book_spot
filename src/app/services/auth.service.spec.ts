@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AdminBooklistService } from './admin-booklist.service';
+import { AuthService } from './auth.service';
 
-describe('AdminBooklistService', () => {
-  let service: AdminBooklistService;
+describe('AuthService', () => {
+  let service: AuthService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AdminBooklistService);
+    service = TestBed.inject(AuthService);
   });
 
   it('should be created', () => {

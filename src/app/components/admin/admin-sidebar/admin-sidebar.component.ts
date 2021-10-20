@@ -15,7 +15,11 @@ export class AdminSidebarComponent implements OnInit {
   }
 
   navigate(target:string){
-    this.route.navigate([target],{replaceUrl:false});
+    this.route.navigate([target],{replaceUrl:true});
+  }
+
+  logout(){
+    this.route.navigate(['/'],{replaceUrl:true});
   }
 
 }

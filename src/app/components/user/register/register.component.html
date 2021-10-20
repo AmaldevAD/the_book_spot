@@ -1,53 +1,55 @@
 <section style="background-color: lightblue;">
-    <div class="container  " style="padding: 2%;">
+    <div class="container   " style="padding: 2%; ">
         <div class="row d-flex justify-content-center ">
             <div class="col-lg-8 col-xl-6">
-                <div class="card rounded-3">
+                <div class="card rounded-3 ">
                     <img src="https://images.unsplash.com/photo-1545696648-86c761bc5410?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9va3NoZWxmfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
                         class="w-100" height="200rem"
                         style="border-top-left-radius: .3rem; border-top-right-radius: .3rem; " alt="Sample photo">
                     <div class="card-body  " style="padding: 5%;">
                         <h3 style="margin-bottom: 0.5rem; padding-left: 3%;">Please Enter Your Details</h3>
 
-                        <form class="px-md-3">
+                        <form #registerForm="ngForm"  class="form-class">
 
                             <div class="form-outline ">
-                                <input type="text" id="form3Example1q" class="form-control" />
-                                <label class="form-label" for="form3Example1q">Name</label>
+                                <input required name='name' #name='ngModel' [(ngModel)]='userModel.name' type="text" id="name" class="form-control" placeholder="Name" />
+                               
                             </div>
 
 
 
 
-                            <div class="form-outline">
-                                <input type="email" name="email1" id="email1" class="form-control">
-                                <label class="form-label" for="email1">Email</label>
+                            <div style="margin-top: 20px;" class="form-outline">
+                                <input required placeholder="Email" name='email' #emamil='ngModel' [(ngModel)]='userModel.email' type="email"  id="email" class="form-control">
+                                
+                            </div>
+                            <div style="margin-top: 20px;" class="form-outline ">
+                                <input required name='address'  placeholder="Address" #address='ngModel' [(ngModel)]='userModel.address' type="text" id="name" class="form-control" />
+                                
                             </div>
 
-                            <div class="form-outline ">
-                                <input type="password" id="Password1" class="form-control" />
-                                <label class="form-label" for="Password1">Enter Your Password</label>
+                            <div style="margin-top: 20px;" class="form-outline ">
+                                <input required name='password'  placeholder="Password"  #password='ngModel' [(ngModel)]='userModel.password' type="password" id="password" class="form-control" />
+                                
                             </div>
 
-                            <div class="form-outline ">
-                                <input type="password" id="Password2" class="form-control" />
-                                <label class="form-label" for="Password2">Re-Enter Your Password</label>
+                            <div style="margin-top: 20px;" class="form-outline ">
+                                <input required name='password2'  placeholder="Confirm Password"  #password2='ngModel' [(ngModel)]='userModel.password2' type="password" id="password2" class="form-control" />
+                               
                             </div>
 
-                            <div class="form-outline">
-                                <input type="number" name="phone" id="phone" class="form-control">
-                                <label for="phone" class="form-label">Enter Phone Number</label>
+                            <div style="margin-top: 20px;" class="form-outline">
+                                <input required name='phone' placeholder="Phone" #phone='ngModel' [(ngModel)]='userModel.phone' type="number"  id="phone" class="form-control">
+                               
                             </div>
 
-                            <div class="form-outline" style="margin-bottom: 2%; margin-top: 1%;">
-                                <input type="checkbox" name="subscribe" id="subscribe">
-                                <label for="subscribe">Subscribe for Offers</label>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" 
-                                    class="btn btn-success btn-lg btn-block">Submit</button>
-                            </div>
+                            
+                            
                         </form>
+                        <div style="margin-top: 20px;" class="d-flex justify-content-center">
+                            <button (click)='register()'  [disabled]='registerForm.invalid' type="submit" class="btn btn-dark btn-lg btn-block">Submit</button>
+                        </div>
+                        <p  routerLink='/login'  style="color: #393f81; cursor: pointer; text-align: center; margin-top: 20px;">Already User? <a  style="color: #393f81;">Login</a></p> 
 
                     </div>
                 </div>

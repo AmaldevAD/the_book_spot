@@ -23,6 +23,7 @@
       <app-search></app-search>
       <p>favorite</p>
       <p>cart</p>
-      <p style="color: white;">Logout</p>
+      <div *ngIf="showLogin" (click)="login()" style="color: white; font-weight: bold; cursor: pointer;">Login</div>
+      <div *ngIf="!showLogin"  (click)="logOut()" style="color: white; font-weight: bold; cursor: pointer;">Logout</div>
     </div>
   </nav>

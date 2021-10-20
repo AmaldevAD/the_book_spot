@@ -14,30 +14,25 @@
               <div class=" col-lg-7 d-flex align-items-center">
                 <div class="card-body  " style="padding: 10%;">
   
-                  <form>
-  
+                  <form #loginForm="ngForm" class="form-class">
                   <br>
                   <br>
-  
                     <h5  style="letter-spacing: 1px; margin-bottom: 5%;">Sign into your account</h5>
-  
                     <div class="form-outline " style="margin-bottom: 1rem;" >
-                      <input type="email" id="Email1" class="form-control form-control-lg" placeholder="--@--.com" />
-                      <label class="form-label" for="Email1">Email address</label>
+                      <input required name='email' #email='ngModel'  [(ngModel)]='userModel.email' type="email" id="email" class="form-control form-control-lg" placeholder="--@--.com" />
+                      <label class="form-label" for="email">Email address</label>
                     </div>
   
                     <div class="form-outline " style="margin-bottom: 1rem;">
-                      <input type="password" id="Password1" class="form-control form-control-lg" />
-                      <label class="form-label" for="Password1">Password</label>
+                      <input required name='password' #password='ngModel'  [(ngModel)]='userModel.password' type="password" id="password" class="form-control form-control-lg" />
+                      <label class="form-label" for="password">Password</label>
                     </div>
   
                     <div style="margin-top: 1rem; margin-bottom: 2rem;">
-                      <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                      <button (click)='login()' [disabled]='loginForm.invalid' class="btn btn-dark btn-lg btn-block" type="button">Login</button>
                     </div>
-  
                     
-                    <p  style="color: #393f81;">Don't have an account? <a href="#" style="color: #393f81;">Register here</a></p>
-                    
+                    <p  routerLink='/register'  style="color: #393f81; cursor: pointer;">Don't have an account? <a  style="color: #393f81;">Register here</a></p> 
                   </form>
   
                 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminOrdersService } from 'src/app/services/admin/admin-orders.service';
 
 @Component({
   selector: 'app-orderlist',
@@ -7,20 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:AdminOrdersService) { }
 
-  orders=[{orderId:101,userId:'LM30',bookId:'Messi',orderPlacedAt:'2021-10-15',delivered:false},
-  {orderId:102,userId:'CR7',bookId:'Ronaldo',orderPlacedAt:'2021-10-11',delivered:false},
-  {orderId:103,userId:'NJR10',bookId:'Neymar',orderPlacedAt:'2021-10-13',delivered:false}]
+  orders:any
+  showOrders=false;
 
   ngOnInit(): void {
+    this.getOrders();
   }
 
-  onButton(order:any)
-{
-  order.delivered=true;
-  //this.orders[this.orders.indexOf(order)].delivered=true;
+  onButton(order: any) {
+    order.delivered = true;
+    //this.orders[this.orders.indexOf(order)].delivered=true;
 
-}
+  }
+
+  getOrders(){
+    this.service.getOrders().subscribe((data)=>{
+      this.orders=data;
+     
+
+    })
+  }
 
 }
