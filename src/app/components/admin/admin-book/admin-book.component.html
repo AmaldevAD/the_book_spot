@@ -14,8 +14,10 @@
         <div class="row" style="margin-top: 2rem;">
             <div class="col-lg-1"></div>
             <div class="col-lg-2">
-              <select name="cat" placeholder="select" style="  font-size: large; " class=" classic">
-                <option *ngFor="let category of Categories">{{category}}</option>
+              <select name="cat" placeholder="select" style="  font-size: large; " class=" classic" (change)="changedropdown($event)">
+                <option value="0">All</option>
+                <option *ngFor="let category of Categories" value={{category.categoryId}} >{{category.categoryName}}</option>
+
               </select>
             </div>
             <div class="col-lg-6"></div>
@@ -41,22 +43,22 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let row of rows">
-                      <td>{{row["ID"]}}</td>
-                      <td>{{row["CategoryId"]}}</td>
-                      <td><img src="{{row['Image']}}" alt="" width="100rem"></td>
-                      <td>{{row["Title"]}}</td>
-                      <td>{{row["Author"]}}</td>
+                      <td>{{row["bookId"]}}</td>
+                      <td>{{row["catId"]}}</td>
+                      <td><img src="{{image_url}}" alt="" width="100rem"></td>
+                      <td>{{row["bookTitle"]}}</td>
+                      <td>{{row["bookAuthor"]}}</td>
                       <td>
-                        <div style="width: 100%; overflow-wrap: break-word;">{{row["Description"]}}
+                        <div style="width: 100%; overflow-wrap: break-word;">{{row["bookDescription"]}}
                         </div>
                       </td>
-                      <td>{{row["ISBN"]}}</td>
-                      <td>{{row["Year"]}}</td>
-                      <td>{{row["Price"]}}</td>
-                      <td>{{row["Position"]}}</td>
-                      <td>{{row["Status"]}}</td>
-                      <td>{{row["Quantity"]}}</td>
-                      <td>{{row["AddedAt"]}}</td>
+                      <td>{{row["bookIsbn"]}}</td>
+                      <td>{{row["bokkYear"]}}</td>
+                      <td>{{row["bookPrice"]}}</td>
+                      <td>{{row["bookPosition"]}}</td>
+                      <td>{{row["bookStatus"]}}</td>
+                      <td>{{row["bookQuantity"]}}</td>
+                      <td>{{row["bookAddedAt"]}}</td>
                       <td>
                         <div class="row">
                           <div style=" cursor: pointer; margin: 5px; margin-left: 2px; background-color: blueviolet;">

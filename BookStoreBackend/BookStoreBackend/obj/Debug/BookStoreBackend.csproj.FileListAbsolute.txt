@@ -1,2 +1,0 @@
-C:\Users\adith\OneDrive\Desktop\Soti\Book_store\the_book_spot\BookStoreBackend\BookStoreBackend\obj\Debug\BookStoreBackend.csproj.AssemblyReference.cache
-C:\Users\adith\OneDrive\Desktop\Soti\Book_store\the_book_spot\BookStoreBackend\BookStoreBackend\obj\Debug\BookStoreBackend.csproj.CoreCompileInputs.cache
