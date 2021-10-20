@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Cart } from '../../models/cart';
+import { CartService } from 'src/app/services/user/cart.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -7,26 +9,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private services:CartService,private router:Router) {
+   }
   public index: any
 
-  public cart = [{ bookId: 1, bookTitle: "Sapiens", bookQuantity: 2, price: 299, imageUrl: "https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" }, { bookId: 2, bookTitle: "Atomic Habits", bookQuantity: 3, price: 199, imageUrl: "https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg" },
-  { bookId: 3, bookTitle: "The Monk who sold his ferrari", bookQuantity: 1, price: 599, imageUrl: "https://images-na.ssl-images-amazon.com/images/I/61Iz2yy2CKL.jpg" },]
+  cart:any
+
   ngOnInit(): void {
-  }
+    this.services.getCartItemList(1).subscribe((data)=>{
+      this.cart=data
+    }
+)}
 
   setCart() {
     //call service to initialise cart array
   }
   changeQuantity(cartItem: any, quantity: string) {
-    console.log(quantity)
-    this.index = this.cart.indexOf(cartItem)
-    this.cart[this.index].bookQuantity = parseInt(quantity)
+
+
+    this.services.updateQuantity(cartItem.userId,{bookId:cartItem.bookId,bookQuantity:Number(quantity)}).subscribe((data)=>{
+      console.log(data)
+    })
+    this.services.getCartItemList(1).subscribe((data)=>{
+      this.cart=data
+    })
+
+    this.router.navigateByUrl("/user/cart")
+    .then(()=>{
+      window.location.reload();
+    });
+
   }
 
   removeFromCart(cartItem: any) {
-    this.index = this.cart.indexOf(cartItem)
-    delete this.cart[this.index]
+    console.log("hai")
 
-  }
+    this.services.deleteCartItem(cartItem.userId,cartItem.bookId).subscribe((data)=>{
+      console.log(data)
+    })
+    
+    this.services.getCartItemList(1).subscribe((data)=>{
+      this.cart=data
+    })
+}
+
+
+
 }
