@@ -46,6 +46,7 @@ export class UserListingComponent implements OnInit {
 
   addtowishlist(){
     this.addedtowishlist = true;
+    
   }
   removefromwishlist(){
     this.addedtowishlist = false;

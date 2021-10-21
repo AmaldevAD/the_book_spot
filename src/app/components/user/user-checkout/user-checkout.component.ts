@@ -3,6 +3,8 @@ import { CartService } from 'src/app/services/user/cart.service';
 import { Cart } from 'src/app/components/models/cart'
 import { AdminCouponsService } from 'src/app/services/admin/admin-coupons.service';
 import { formatNumber } from '@angular/common';
+import { UserCheckoutService } from 'src/app/services/user/user-checkout.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-checkout',
@@ -11,7 +13,11 @@ import { formatNumber } from '@angular/common';
 })
 export class UserCheckoutComponent implements OnInit {
 
-  constructor(private cartServices: CartService, private couponService: AdminCouponsService) { }
+  constructor(private cartServices: CartService, private couponService: AdminCouponsService, private checkOutService:UserCheckoutService,
+    private route:Router) {
+    this.bookNames=""
+    this.bookIds=""
+   }
 
   cartModel = new Cart();
   count: any;
@@ -21,6 +27,11 @@ export class UserCheckoutComponent implements OnInit {
   coupons: any
   discount = 0;
   validCoupon: any;
+  userData:any;
+  userAddress:any;
+
+  bookNames:string
+  bookIds:string
 
   cartArray: Array<{
     bookId?: number,
@@ -32,6 +43,7 @@ export class UserCheckoutComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getUserById();
     this.getCartItems()
     this.getCoupons();
 
@@ -56,6 +68,8 @@ export class UserCheckoutComponent implements OnInit {
 
     for (let i = 0; i < this.count; i++) {
       this.subTotal += Number(this.cartArray[i].bookQuantity) * Number(this.cartArray[i].bookPrice)
+      this.bookNames=this.bookNames+this.cartArray[i].bookTitle +", "
+      this.bookIds=this.bookIds+this.cartArray[i].bookId +", "
     }
   }
 
@@ -81,10 +95,38 @@ export class UserCheckoutComponent implements OnInit {
       this.coupons = data;
     })
 
-
   }
 
 
+  getUserById(){
+    this.checkOutService.getUserById(localStorage.getItem('user')).subscribe((data)=>{
+      this.userData=data;
+      this.userAddress=data.address;
+      
+    })
+  }
+
+  reverseAddress(){
+    this.userAddress=this.userData.address;
+  }
+
+
+  updateAddress(){
+    this.checkOutService.updateAddress(localStorage.getItem('user'),this.userAddress).subscribe()
+  }
+
+
+  placeOrder(){
+    console.log("called")
+    this.checkOutService.plcaeOrder(this.bookIds,this.bookNames,this.subTotal,this.discount).subscribe()
+    alert("Order Placed")
+    setTimeout(()=>{  }, 4000)
+    this.route.navigate(['/'],{replaceUrl:true})
+  }
+
+  navigate(){
+    this.route.navigate(['/'],{replaceUrl:true})
+  }
 
 
 }

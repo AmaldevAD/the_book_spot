@@ -9,47 +9,66 @@
                     <div class="card-body  " style="padding: 5%;">
                         <h3 style="margin-bottom: 0.5rem; padding-left: 3%;">Please Enter Your Details</h3>
 
-                        <form #registerForm="ngForm"  class="form-class">
+                        <form #registerForm="ngForm" class="form-class">
 
                             <div class="form-outline ">
-                                <input required name='name' #name='ngModel' [(ngModel)]='userModel.name' type="text" id="name" class="form-control" placeholder="Name" />
-                               
+                                <input required name='name' #name='ngModel' [(ngModel)]='userModel.name' type="text"
+                                    id="name" class="form-control" placeholder="Name" />
+                                <small [class.d-none]="name.untouched || name.valid" class="text-danger">This is
+                                    required filed</small>
+
                             </div>
 
 
 
 
                             <div style="margin-top: 20px;" class="form-outline">
-                                <input required placeholder="Email" name='email' #emamil='ngModel' [(ngModel)]='userModel.email' type="email"  id="email" class="form-control">
-                                
+                                <input required placeholder="Email" name='email' #email='ngModel' pattern=".+@.+\..+"
+                                    [(ngModel)]='userModel.email' type="email" id="email" class="form-control">
+                                <small [class.d-none]="email.untouched || !email.errors?.required"
+                                    class="text-danger">This is required filed</small>
+                                <small [class.d-none]="email.untouched || !email.errors?.pattern"
+                                    class="text-danger">Invalid email</small>
+
                             </div>
                             <div style="margin-top: 20px;" class="form-outline ">
-                                <input required name='address'  placeholder="Address" #address='ngModel' [(ngModel)]='userModel.address' type="text" id="name" class="form-control" />
-                                
+                                <input required name='address' placeholder="Address" #address='ngModel'
+                                    [(ngModel)]='userModel.address' type="text" id="name" class="form-control" />
+                                    <small [class.d-none]="address.untouched || address.valid" class="text-danger">This is
+                                        required filed</small>
                             </div>
 
                             <div style="margin-top: 20px;" class="form-outline ">
-                                <input required name='password'  placeholder="Password"  #password='ngModel' [(ngModel)]='userModel.password' type="password" id="password" class="form-control" />
-                                
+                                <input required name='password' placeholder="Password" #password='ngModel'
+                                    [(ngModel)]='userModel.password' type="password" id="password"
+                                    class="form-control" />
+                                    <small [class.d-none]="password.untouched || password.valid" class="text-danger">This is required filed</small>
                             </div>
 
                             <div style="margin-top: 20px;" class="form-outline ">
-                                <input required name='password2'  placeholder="Confirm Password"  #password2='ngModel' [(ngModel)]='userModel.password2' type="password" id="password2" class="form-control" />
-                               
+                                <input required name='password2' placeholder="Confirm Password" #password2='ngModel'
+                                    [(ngModel)]='userModel.password2' type="password" id="password2"
+                                    class="form-control" />
+
                             </div>
 
                             <div style="margin-top: 20px;" class="form-outline">
-                                <input required name='phone' placeholder="Phone" #phone='ngModel' [(ngModel)]='userModel.phone' type="number"  id="phone" class="form-control">
-                               
+                                <input required name='phone' placeholder="Phone" #phone='ngModel' pattern="^\d{10}$"
+                                    [(ngModel)]='userModel.phone' type="number" id="phone" class="form-control">
+                                    <small [class.d-none]="phone.untouched || !phone.errors?.required" class="text-danger">This is required filed</small>
+                                    <small [class.d-none]="phone.untouched || !phone.errors?.pattern" class="text-danger">Invalid number</small>
                             </div>
 
-                            
-                            
+
+
                         </form>
                         <div style="margin-top: 20px;" class="d-flex justify-content-center">
-                            <button (click)='register()'  [disabled]='registerForm.invalid' type="submit" class="btn btn-dark btn-lg btn-block">Submit</button>
+                            <button (click)='register()' [disabled]='registerForm.invalid' type="submit"
+                                class="btn btn-dark btn-lg btn-block">Submit</button>
                         </div>
-                        <p  routerLink='/login'  style="color: #393f81; cursor: pointer; text-align: center; margin-top: 20px;">Already User? <a  style="color: #393f81;">Login</a></p> 
+                        <p routerLink='/login'
+                            style="color: #393f81; cursor: pointer; text-align: center; margin-top: 20px;">Already User?
+                            <a style="color: #393f81;">Login</a></p>
 
                     </div>
                 </div>

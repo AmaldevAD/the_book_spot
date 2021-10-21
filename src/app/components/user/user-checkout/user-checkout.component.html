@@ -7,14 +7,10 @@
             <div class="headings">Address</div>
             <hr>
             <address style="margin-left: 10px;">
-                Jon Doe <br>
-                Visit us at:<br>
-                Example.com<br>
-                Box 564, Disneyland<br>
-                USA
+               {{userAddress}}
             </address>
 
-            <a style="margin-left: 10px;" href="">Select different Address</a>
+            <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAddressModal"class="link-dark" style="margin-left: 10px;" >Edit Address</a>
 
 
             <div style="margin-top: 30px;" class="headings">Cart Items</div>
@@ -97,10 +93,41 @@
         </div>
 
         <div style="margin-top: 20px;">
-            <button style="border-radius: 10px ;" class="btn-block  btn-dark"> Place order</button>
+            <button (click)="placeOrder()" style="border-radius: 10px ;" class="btn-block  btn-dark"> Place order</button>
         </div>
     </div>
 
 
 
 </div>
+
+
+
+
+
+
+
+
+
+<!-- modal -->
+
+
+<div id="editAddressModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Address</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="margin: 40px 20px;">
+           <input #address='ngModel' [(ngModel)]='userAddress' type="text" class="form-control" id="address" aria-describedby="address" placeholder="Edit Address">
+        </div>
+        <div class="modal-footer">
+          <button (click)='updateAddress()' type="button" data-dismiss="modal" class="btn btn-dark">Save changes</button>
+          <button (click)='reverseAddress()' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
