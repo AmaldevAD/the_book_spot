@@ -60,8 +60,8 @@ export class UserHomeComponent implements OnInit {
       this.books=data
     })
   }
-  bookDetailPage(){
-    this.route.navigate(['user/book-detail'],{replaceUrl:false});
+  bookDetailPage(id:any){
+    this.route.navigate(['/user/book-detail',id],{replaceUrl:false});
   }
 
 

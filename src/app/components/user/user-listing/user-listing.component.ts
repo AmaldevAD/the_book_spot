@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserbooklistService } from 'src/app/services/user/userbooklist.service';
+import { SearchService } from 'src/app/services/admin/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-listing',
@@ -8,13 +12,36 @@ import { Component, OnInit } from '@angular/core';
 export class UserListingComponent implements OnInit {
   image : any;
   items : any;
+  catId:any
   addedtowishlist : boolean =false ;
 
-  constructor() { 
-    this.items = ['item1','item2','item3','item4','item5','item6','item7'];
+  constructor(private activatedRoute:ActivatedRoute,private services:UserbooklistService,private servicessearch:SearchService,private router:Router) { 
+
   }
 
   ngOnInit(): void {
+
+    this.services.getBookListByCat(0).subscribe((data)=>{
+      this.items=data
+    })
+
+    this.activatedRoute.params.subscribe(params=>{
+      if(params.searchItem)
+      {
+        this.servicessearch.getSearchItemUser(params.searchItem,params.searchType).subscribe((data)=>{
+          this.items=data
+        })
+        
+      }
+
+    })
+
+  }
+
+
+  viewBook(bookId:any)
+  {
+    this.router.navigateByUrl('user/book-detail/'+bookId);
   }
 
   addtowishlist(){

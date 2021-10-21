@@ -13,6 +13,10 @@ export class SearchService {
 
     return this.http.post<any>(this.apiModel.localhost+"api/book/search",{searchItem:searchItemval,searchType:"All"})
   }
+  getSearchItemUser(searchItemval:any,searchTypeval:any):Observable<any>{
+
+    return this.http.post<any>(this.apiModel.localhost+"api/book/search",{searchItem:searchItemval,searchType:searchTypeval})
+  }
 
 
 }
