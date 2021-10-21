@@ -49,7 +49,6 @@ li a:hover{
 
 .origins span{
     border-radius: .5rem;
-    background-color: whitesmoke;
     display: inline-block;
     font-size: .7rem;
     color: grey;
@@ -63,8 +62,8 @@ li a:hover{
 }
 
 img{
-    height:70%;
-    width: 85%;
+    height:60%;
+    
     box-sizing: border-box;
     margin-left: 8%;
     margin-top: 5%;
@@ -73,4 +72,5 @@ img{
 }
 .name{
     text-align: center;
+    font-size: x-large;
 }

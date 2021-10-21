@@ -1,7 +1,8 @@
+<app-user-nav-bar></app-user-nav-bar>
 <ul>
     <li *ngFor="let category of categories">
         <a (click)="onCatClick(category.categoryId)">
-            <img src="{{category.image}}" alt="Image Not Found" >
+            <img src="assets/images/categories/{{category.image}}"  alt="Image Not Found" >
             <div class="content">
                 <div class="name">
                    {{category.categoryName}}
@@ -9,7 +10,7 @@
 
                 <div class="product-item-footer" (click)="onCatClick(category.categoryId)">
                     <div class="origins">
-                        <span >
+                        <span  style="font-size: medium;">
                             {{category.description}}
                         </span>
                     </div>
