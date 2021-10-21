@@ -7,27 +7,26 @@
 
             <div class=" text-center body-text">
                 <div>
-                    <h1 class="book-title">"Title"</h1>
+                    <h1 class="book-title">{{book.bookTitle}}</h1>
                 </div>
                 <div class="book-author">
-                    <h3> <i>- Author</i> </h3>
+                    <h3> <i>{{book.bookAuthor}}</i> </h3>
                 </div>
 
                 <div class="book-qote">
-                    <h4> <i style="color: rgb(170, 170, 170);">"is simply dummy text of the printing and typesetting
-                            industry. "</i> </h4>
+                    <h4> <i style="color: rgb(170, 170, 170);">{{book.bookDescription}}</i> </h4>
                 </div>
 
                 <div class="book-price">
-                    <h3> <i> {{220| currency:"INR" }}</i> </h3>
+                    <h3> <i> {{book.bookPrice| currency:"INR" }}</i> </h3>
                 </div>
                 <div>
                     <div class="col" style="margin-top: 40px;">
                         <button type="button" data-toggle="modal" data-target="#exampleModalLong"
                             class="btn btn-outline-dark btn-lg"
-                            style="border-radius: 15px; padding: 10px 30px;">Add to wishlist</button>
+                            style="border-radius: 15px; padding: 10px 30px;" (click)="addToWishlist(book.bookId)">Add to wishlist</button>
                         <button  type="button" class="btn btn-outline-dark btn-lg"
-                            style="border-radius: 15px; padding: 10px 20px; margin-left: 20px;">Add to Cart</button>
+                            style="border-radius: 15px; padding: 10px 20px; margin-left: 20px;" (click)="addToCart(book.bookId)">Add to Cart</button>
                     </div>
                 </div>
             </div>

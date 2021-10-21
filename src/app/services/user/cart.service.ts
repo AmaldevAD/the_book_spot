@@ -35,4 +35,10 @@ export class CartService {
     return this.http.put<any>(this.apiModel.localhost+"api/cart/"+userId,data)
   }
 
+  addToCart(userId:any,bookIdval:any)
+  {
+    return this.http.post<any>(this.apiModel.localhost+"api/cart/"+userId,{bookId:bookIdval,bookQuantity:1})
+
+  }
+
 }

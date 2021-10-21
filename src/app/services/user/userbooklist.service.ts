@@ -14,6 +14,14 @@ export class UserbooklistService {
     
     return this.http.get<any>(this.apiModel.localhost+"api/gtbokbycat/"+Id)
   }
+  getAllBooks():Observable<any>{
+    
+    return this.http.get<any>(this.apiModel.localhost+"api/book/getallbooks")
+  }
+  getBookById(Id:any):Observable<any>{
+    
+    return this.http.get<any>(this.apiModel.localhost+"book/byid/"+Id)
+  }
   
 
 }
