@@ -17,7 +17,7 @@ export class AdminBooklistService {
 
   getBookList(Id:number):Observable<any>{
     
-    return this.http.get<any>(this.apiModel.localhost+"api/book/"+Id)
+    return this.http.get<any>(this.apiModel.localhost+"api/gtbokbycat/"+Id)
   }
 
   deleteBook(Id:number):Observable<any>{

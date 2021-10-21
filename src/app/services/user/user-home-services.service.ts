@@ -17,7 +17,7 @@ export class UserHomeServicesService {
   }
 
   getBooks():Observable<any>{
-    return this.http.get<any>(this.apiModel.localhost+"api/book")
+    return this.http.get<any>(this.apiModel.localhost+"api/book/getallbooks")
   }
 
 }
