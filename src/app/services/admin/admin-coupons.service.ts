@@ -16,4 +16,9 @@ export class AdminCouponsService {
     return this.http.get<any>(this.apiModel.localhost+"api/Coupon")
   }
 
+  deleteCoupon(Id:number):Observable<any>{
+    
+    return this.http.delete<any>(this.apiModel.localhost+"api/Coupon/"+Id)
+  }
+
 }

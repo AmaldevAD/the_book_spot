@@ -97,12 +97,13 @@
     <div class=" container">
         <div class="row" >
             <div  *ngFor="let cat of categories">
-                <div style="margin-left: 20px;">
-                    <div style=" position: absolute; z-index: 2; ">
-                        <img height="300px" src="assets/images/appIcons/unnamed1.png" alt="">
+                <div style="margin-left: 20px;" >
+                    <div style=" position: absolute; z-index: 2; " >
+                        <img height="300px" src="assets/images/appIcons/unnamed1.png" alt="" >
                     </div>
-                    <div style="z-index: 200;   padding-top: 50px; padding-left: 16px;">
-                        <img height="210px" width="170px"
+                    <div style="z-index: 200;   padding-top: 50px; padding-left: 16px;" >
+                        
+                        <img height="210px" width="170px" 
                             src="assets/images/categories/{{cat.image}}"
                             alt="" title="" class="img-responsive">
                     </div>
@@ -148,51 +149,18 @@
                     < </p>
             </button>
         </div>
-
+        
 
         <div class="box-product col-9" style="width: 80%;">
 
             <div class="image" style=" margin-bottom: 100px; margin-right: 4%;margin-left: 4%;">
-                <div #widgetsContentRated class="row flex-row flex-nowrap" style="overflow-x: hidden;">
+                <div #widgetsContentRated class="row flex-row flex-nowrap" style="overflow-x: hidden;  ">
 
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
+                    <a (click)='bookDetailPage(book.bookId)' *ngFor="let book of nums" style="margin-left: 5%;cursor: pointer;">
+                        <img height="210px" src="assets/images/categories/{{book.bookImage}}"
                             alt="" title="" class="img-responsive">
                     </a>
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
-                            alt="" title="" class="img-responsive">
-                    </a>
-
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
-                            alt="" title="" class="img-responsive">
-                    </a>
-
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
-                            alt="" title="" class="img-responsive">
-                    </a>
-
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
-                            alt="" title="" class="img-responsive">
-                    </a>
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
-                            alt="" title="" class="img-responsive">
-                    </a>
-
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
-                            alt="" title="" class="img-responsive">
-                    </a>
-
-                    <a style="margin-left: 5%;"href="">
-                        <img src="https://www.templates-preview.com/opencart/300111896/image/cache/catalog/products/product_6-144x212.jpg"
-                            alt="" title="" class="img-responsive">
-                    </a>
-
+                    
 
                 </div>
 
