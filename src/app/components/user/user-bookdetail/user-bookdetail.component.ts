@@ -26,10 +26,12 @@ export class UserBookdetailComponent implements OnInit {
   addToCart(bookId:any)
   {
     this.cartservice.addToCart(Number(localStorage.getItem('user')),bookId).subscribe()
+    alert("Added to cart")
   }
 
   addToWishlist(bookId:any)
   {
     this.wishlistservice.addToWishlist(bookId,Number(localStorage.getItem('user'))).subscribe()
+    alert("Added to wishlist")
   }
 }
