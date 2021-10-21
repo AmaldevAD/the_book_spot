@@ -7,7 +7,7 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item ">
            
           <a routerLink='/' class="nav-link" >Home <span class="sr-only">(current)</span></a>
         </li>
@@ -21,6 +21,7 @@
         
       </ul>
       <app-search></app-search>
+      <div routerLink='/user/orders'  style="color: white; font-weight: bold; cursor: pointer; margin-right: 20px;"><i style="font-size: x-large;" class="bi bi bi-basket"></i></div>
       <div routerLink='/user/wishlist'  style="color: white; font-weight: bold; cursor: pointer; margin-right: 25px;"><i style="font-size: x-large;" class="bi bi-heart-fill"></i></div>
       <div routerLink='/user/cart' style="color: white; font-weight: bold; cursor: pointer; margin-right: 25px;"><i style="font-size: x-large;" class="bi bi-cart-dash"></i></div>
       <div *ngIf="showLogin" (click)="login()" style="color: white; font-weight: bold; cursor: pointer;">Login</div>

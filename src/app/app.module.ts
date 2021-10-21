@@ -34,6 +34,7 @@ import { UserBookdetailComponent } from './components/user/user-bookdetail/user-
 import { SearchComponent } from './components/user/search/search.component';
 import { UserListingComponent } from './components/user/user-listing/user-listing.component';
 import { CatgrorybasedbooklistComponent } from './components/user/catgrorybasedbooklist/catgrorybasedbooklist.component';
+import { UserOrderComponent } from './components/user/user-order/user-order.component';
 
 
 
@@ -66,7 +67,8 @@ import { CatgrorybasedbooklistComponent } from './components/user/catgrorybasedb
     UserBookdetailComponent,
     SearchComponent,
     UserListingComponent,
-    CatgrorybasedbooklistComponent
+    CatgrorybasedbooklistComponent,
+    UserOrderComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule,HttpClientModule,

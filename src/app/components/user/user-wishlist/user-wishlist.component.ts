@@ -13,12 +13,13 @@ export class UserWishlistComponent implements OnInit {
   constructor(private wishlistservice:WishlistService,private cartservice:CartService,private router:Router) { }
 
   wishlists:any
+  count:any
 
   ngOnInit(): void {
     console.log("out")
     this.wishlistservice.getWishlist(Number(localStorage.getItem('user'))).subscribe((data)=>{
       console.log("in")
-
+      this.count = Object.keys(data).length;
       this.wishlists=data
     })
   }

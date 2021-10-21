@@ -21,6 +21,7 @@ import { UserCheckoutComponent } from './components/user/user-checkout/user-chec
 import { UserBookdetailComponent } from './components/user/user-bookdetail/user-bookdetail.component';
 import { UserListingComponent } from './components/user/user-listing/user-listing.component';
 import { CatgrorybasedbooklistComponent } from './components/user/catgrorybasedbooklist/catgrorybasedbooklist.component';
+import { UserOrderComponent } from './components/user/user-order/user-order.component';
 
 
 const routes:Routes=[
@@ -46,7 +47,8 @@ const routes:Routes=[
   {path:'user/catbasedbooklist/:catId' , component: CatgrorybasedbooklistComponent,canActivate:[AuthGuard]},
   {path:'user/book-detail/:bookId', component: UserBookdetailComponent,canActivate:[AuthGuard]},
   {path:'user/book/search/:searchItem/:searchType' , component:UserListingComponent},
-  {path:'user/allbooklist' , component:UserListingComponent}
+  {path:'user/allbooklist' , component:UserListingComponent},
+  {path:'user/orders',component:UserOrderComponent,canActivate:[AuthGuard]}
 
 ]
 
