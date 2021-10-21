@@ -14,14 +14,13 @@ export class CartComponent implements OnInit {
   public index: any
 
   cart:any
-  userId:any
+  count:any
 
   ngOnInit(): void {
-    this.userId=Number(localStorage.getItem('user'))
-    console.log(this.userId)
-    this.services.getCartItemList(this.userId).subscribe((data)=>{
-
+    this.services.getCartItemList(Number(localStorage.getItem('user'))).subscribe((data)=>{
+      console.log(data)
       this.cart=data
+      this.count = Object.keys(data).length; 
     }
 )}
 
@@ -32,7 +31,7 @@ export class CartComponent implements OnInit {
     this.services.updateQuantity(cartItem.userId,{bookId:cartItem.bookId,bookQuantity:Number(quantity)}).subscribe((data)=>{
       console.log(data)
     })
-    this.services.getCartItemList(this.userId).subscribe((data)=>{
+    this.services.getCartItemList(Number(localStorage.getItem('user'))).subscribe((data)=>{
       this.cart=data
     })
 
@@ -50,9 +49,7 @@ export class CartComponent implements OnInit {
       console.log(data)
     })
     
-    this.services.getCartItemList(this.userId).subscribe((data)=>{
-      this.cart=data
-    })
+    window.location.reload();
 }
 
 

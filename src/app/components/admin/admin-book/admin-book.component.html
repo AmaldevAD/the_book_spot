@@ -5,10 +5,10 @@
   </div>
 
 
-  <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 20px; ">
+  <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 40px; ">
     <h3>Books</h3>
     <hr>
-    <div class="row">
+    <div class="row d-flex justify-content-between">
       <div>
         <div class="">
           <select name="cat" placeholder="select" style="  font-size: medium; " class=" classic"
@@ -18,7 +18,7 @@
           </select>
         </div>
       </div>
-      <div style="margin-left: 20px;">
+      <div >
         <app-book-search></app-book-search>
       </div>
      
@@ -27,40 +27,30 @@
 
 
     <div class="row" style="margin-top: 2rem;">
-      <div class="col-lg-1"></div>
-
-      <div class="col-lg-6"></div>
-      <div class="col-lg-3">
-
-      </div>
+      
       <div class="row">
         <div style="margin-left: 20px;" class="">
-          <br>
-          <br>
+        
 
 
           <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
-              <br>
-              <br>
-          
-          
+            <div class="col-lg-10 " style="margin-left: 20px;">
+            
               <div class="row">
           
-                <table class="table table-bordered table-hover table-dark">
-                  <thead>
+                <table class="table table-bordered  " >
+                  <thead class="table-dark">
                     <tr>
                       <th *ngFor="let column of headers">{{column}}</th>
                       <th>Function</th>
           
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody >
                     <tr *ngFor="let row of rows">
-                      <td>{{row["bookId"]}}</td>
+                      <td style="font-weight: bold;">{{row["bookId"]}}</td>
                       <td>{{row["catId"]}}</td>
-                      <td><img src="{{image_url}}" alt="" width="100rem"></td>
+                      <td><img src="assets/images/categories/{{row.bookImage}}" alt="" height="100px"></td>
                       <td>{{row["bookTitle"]}}</td>
                       <td>{{row["bookAuthor"]}}</td>
                       <td>
@@ -68,15 +58,15 @@
                         </div>
                       </td>
                       <td>{{row["bookIsbn"]}}</td>
-                      <td>{{row["bokkYear"]}}</td>
-                      <td>{{row["bookPrice"]}}</td>
+                      <td>{{row["bookYear"]}}</td>
+                      <td>{{row["bookPrice"]|currency:'INR'}}</td>
                       <td>{{row["bookPosition"]}}</td>
                       <td>{{row["bookStatus"]}}</td>
                       <td>{{row["bookQuantity"]}}</td>
                       <td>{{row["bookAddedAt"]}}</td>
                       <td>
                         <div class="row">
-                          <div style=" cursor: pointer; margin: 5px; margin-left: 2px; background-color: blueviolet;">
+                          <div (click)="addDefaultBookDetails(row)" type='button' data-toggle="modal" data-target="#bookModal" style=" cursor: pointer; margin: 5px; margin-left: 10px; background-color: white;">
                             <img src="https://www.pdfzorro.com/Images/IconsFunktionen/pdf-edit.webp" width="30px" alt="">
                           </div>
           
@@ -98,3 +88,76 @@
   
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Book</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+
+
+                <form #bookForm="ngForm" class="form-class">
+                    <div class="row " style="background-color: azure;">
+                        <div class="col-8 d-flex align-items-center justify-content-center">
+                            <input (change)="onSelectFile($event)" required type="file" accept="*.png.jpg">
+                        </div>
+                        <div class="col-4"> <img  [src]="url" alt="" width="80px"
+                                height="80px"></div>
+                    </div>
+                    <div class="form-group col-lg-9" style="margin-left: 50px; margin-top: 20px;">
+                        <input #bookTitle='ngModel' [(ngModel)]='bookModel.bookTitle' required name='bookTitle' type="text" class="form-control  " id="book-title"
+                            placeholder="Enter Book Titile"><br>
+                        <input #bookAuthor='ngModel' [(ngModel)]='bookModel.bookAuthor' required name='bookAuthor' required name="bookAuthor" type="text" class="form-control" id="bookAuthor"
+                            placeholder="Enter Book Author"><br>
+
+                            
+
+                            <input #bookPrice='ngModel' [(ngModel)]='bookModel.bookPrice' required name="bookPrice" type="number" class="form-control" id="bookPrice"
+                            placeholder="Enter Price">
+
+                            <input style="margin-top: 20px;" #bookYear='ngModel' [(ngModel)]='bookModel.bookYear' required name="bookYear" type="number" class="form-control" id="bookYear"
+                            placeholder="Enter Year">
+
+                        <input style="margin-top: 20px;" bookDesc='ngModel' [(ngModel)]='bookModel.bookDes' required name="bookDesc" type="text" class="form-control" id="bookDesc"
+                            placeholder="Enter Book Description"><br>
+
+                        <input #bookPosition='ngModel' [(ngModel)]='bookModel.bookPos' required name="bookPosition" type="number" class="form-control" id="bookPosition"
+                            placeholder="Enter Catrgory position">
+
+                            <input style="margin-top: 20px;" #bookQty='ngModel' [(ngModel)]='bookModel.bookQty' required name="bookQty" type="number" class="form-control" id="bookQty"
+                            placeholder="Enter Quantity">
+                        <select  (change)='changeCat($event)' style="margin-top: 20px;" class="custom-select">
+                            <option value="{{bookModel.catId}}" selected>Selected- {{bookModel.catName}}</option>
+                            <option *ngFor="let cat of Categories" value="{{cat.categoryId}}">{{cat.categoryName}}
+                            </option>
+                        </select>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button (click)="saveBookEdit()" [disabled]='bookForm.invalid' data-dismiss="modal" id="addcat" type="button" class="btn btn-dark">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

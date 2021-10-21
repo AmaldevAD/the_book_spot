@@ -1,7 +1,7 @@
 export class BookModel{
 
     constructor(
-
+      public bookId?:number,
       public catId?:number,
        public bookTitle?:string,
        public bookAuthor?:string,
@@ -14,6 +14,7 @@ export class BookModel{
        public bookImage?:string,
        public bookQty?:number,
        public bookAddedAt?:string,
+       public catName?:string
 
     ){}
 }

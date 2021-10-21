@@ -41,9 +41,10 @@ const routes:Routes=[
   {path:'user/address', component: AddressComponent,canActivate:[AuthGuard]},
   {path:'user/wishlist', component: UserWishlistComponent,canActivate:[AuthGuard]},
   {path:'user/checkout', component: UserCheckoutComponent,canActivate:[AuthGuard]},
+  {path:'user/book-detail', component: UserBookdetailComponent,canActivate:[AuthGuard]},
+  {path:'user/user-list' , component: UserListingComponent,canActivate:[AuthGuard] },
+  {path:'user/catbasedbooklist/:catId' , component: CatgrorybasedbooklistComponent,canActivate:[AuthGuard]},
   {path:'user/book-detail/:bookId', component: UserBookdetailComponent,canActivate:[AuthGuard]},
-  {path:'user/user-list' , component: UserListingComponent },
-  {path:'user/catbasedbooklist/:catId' , component: CatgrorybasedbooklistComponent},
   {path:'user/book/search/:searchItem/:searchType' , component:UserListingComponent},
   {path:'user/allbooklist' , component:UserListingComponent}
 

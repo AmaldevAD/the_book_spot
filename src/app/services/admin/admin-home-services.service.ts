@@ -21,6 +21,15 @@ export class AdminHomeServicesService {
     return this.http.get<any>(this.apiModel.localhost+"users/getCount")
   }
 
+  getBookCount():Observable<any>{
+    
+    return this.http.get<any>(this.apiModel.localhost+"api/book/count")
+  }
+  getCategoryCount():Observable<any>{
+    
+    return this.http.get<any>(this.apiModel.localhost+"api/categories/count")
+  }
+
   addCoupon(couponModel:CouponModel):Observable<any>{
    return this.http.post<any>(this.apiModel.localhost+"api/Coupon",{
     "name": couponModel.name,

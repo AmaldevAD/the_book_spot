@@ -1,10 +1,10 @@
 export class Cart{
 
     constructor(
-       public bookId:number,
+       public bookId?:number,
        public bookTitle?:string,
        public bookQuantity?:number,
-       public price?:number,
-       public imageUrl?:string
+       public bookPrice?:number,
+       public bookImage?:string
     ){}
 }

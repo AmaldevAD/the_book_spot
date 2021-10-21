@@ -65,7 +65,7 @@
             <div class="image" style=" margin-bottom: 100px; margin-right: 4%;margin-left: 4%;">
                 <div  #widgetsContent class="row flex-row flex-nowrap" style="overflow-x: hidden;">
 
-                    <a (click)='bookDetailPage()' *ngFor="let book of books" style="margin-left: 5%;cursor: pointer;">
+                    <a (click)='bookDetailPage(book.bookId)' *ngFor="let book of books" style="margin-left: 5%;cursor: pointer;">
                         <img height="210px" src="assets/images/categories/{{book.bookImage}}"
                             alt="" title="" class="img-responsive">
                     </a>

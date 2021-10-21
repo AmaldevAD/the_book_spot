@@ -20,24 +20,29 @@
             <div style="margin-top: 30px;" class="headings">Cart Items</div>
             <hr>
             <div class="card" style="padding: 10px 30px; margin-left: 10px;">
-                <div class="row">
-                    <div class="row  col-9 d-flex justify-content-start align-items-center"
-                        style="">
-                        <img height="90px" width="auto"
-                            src="https://kbimages1-a.akamaihd.net/fdf06d9a-d900-48dd-94fb-1c14eb5b94ba/1200/1200/False/the-da-vinci-code.jpg"
-                            alt="Card image cap">
-                        <div style="margin-left: 20px;">
-                            <h5 class="card-title">Card title</h5>
+                <div *ngFor="let cartItem of cart; let i = index" class="row" style="margin-top: 20px;">
+
+                    <div class="row  col-6 d-flex justify-content-start align-items-center">
+                        <div style="margin-right: 20px; font-weight: bold; font-size: larger;color: gray;" class="">
+                            {{i+1}}.
                         </div>
+                        <div style="margin-left: 20px; margin-right: 50px; margin-top: 10px;">
+                            <h5 class="card-title">{{cartItem.bookTitle}}</h5>
+                        </div>
+
+
+                    </div>
+                    <div class="col-3">
+                        <img height="90px" width="auto" src="assets/images/categories/{{cartItem.bookImage}}">
                     </div>
                     <div class="col-1  d-flex justify-content-center align-items-center"
-                        style="">
-                        qty
+                        style="font-weight: bold; color: brown; font-size: larger;">
+                        {{cartItem.bookQuantity}}
                     </div>
 
-                    <div class="col-2 d-flex justify-content-center align-items-center"
-                        style="">
-                        <div>{{221 | currency :'INR'}} </div>
+                    <div style="color: green; font-weight: 700;"
+                        class="col-2 d-flex justify-content-center align-items-center">
+                        <div>{{cartItem.bookQuantity*cartItem.bookPrice | currency :'INR'}} </div>
 
                     </div>
 
@@ -52,9 +57,15 @@
                 <hr>
                 <div class="row" style="margin-left: 10px;">
                     <div class="form-group" style="width: 30%;">
-                        <input type="text" class="form-control" id="couponCode" placeholder="Enter Code">
+                        <input #code='ngModel' [(ngModel)]='enteredCode' name='code' type="text" class="form-control"
+                            id="couponCode" placeholder="Enter Code">
                     </div>
-                    <button style="height: 40px; margin-left: 20px; border-radius: 10px;" class="btn btn-dark "> Apply</button>
+                    <button (click)="applyCoupon()" style="height: 40px; margin-left: 20px; border-radius: 10px;"
+                        class="btn btn-dark "> Apply</button>
+                </div>
+                <div style="margin-left: 20px;">
+                    <div class="text-success" *ngIf='validCoupon==true'>Coupon Applied</div>
+                    <div class="text-danger" *ngIf='validCoupon==false'>Invalid Coupon </div>
                 </div>
                
             </div>
@@ -68,18 +79,19 @@
         <div class="card" style="padding: 20px;">
             <div class="headings" style="font-size: x-large;"> Sub Total</div>
             <hr>
-            <div class="row d-flex justify-content-between" style="margin: 0px 10px">
+            <div class="row d-flex justify-content-between" style="margin: 0px 10px;color: green; font-weight: 700;">
                 <div>Total</div>
-                <div>{{1000| currency:'INR'}}</div>
+                <div>{{subTotal | currency:'INR'}}</div>
             </div>
-            <div class="row d-flex justify-content-between" style="margin: 0px 10px">
+            <div *ngIf="this.validCoupon==true" class="row d-flex justify-content-between"
+                style="margin: 0px 10px;color: brown; font-weight: 700;">
                 <div>Discount</div>
-                <div>{{-200| currency:'INR'}}</div>
+                <div>{{discount| currency:'INR'}}</div>
             </div>
             <hr>
-            <div class="row d-flex justify-content-between" style="margin: 0px 10px">
+            <div class="row d-flex justify-content-between" style="margin: 0px 10px ;color: green; font-weight: 700;">
                 <div>To Pay</div>
-                <div>{{800| currency:'INR'}}</div>
+                <div>{{subTotal-discount| currency:'INR'}}</div>
             </div>
 
         </div>
