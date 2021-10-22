@@ -17,6 +17,7 @@
         <table class="table table-bordered table-striped ">
             <thead class="thead-dark">
                 <tr>
+                    <th>CatId</th>
                     <th colspan="2">Name</th>
                     <th>Description</th>
                     <th>position</th>
@@ -26,9 +27,10 @@
             </thead>
             <tbody>
                 <tr *ngFor="let category of categories">
+                    <td class=" text-center">{{category.categoryId}}</td>
                     <td colspan="2"><span class="imgspan" ><img src="assets/images/categories/{{category.image}}" height="20%" width="100px"  ></span><span class="imgspan" >{{category.categoryName}}</span></td>
                     <td>{{category.description}}</td>
-                    <td>{{category.position}}</td>
+                    <td class="text-center">{{category.position}}</td>
                     <td>
                         <button class="btn btn-danger deli" (click)="toggleStatus(category)"  *ngIf="category.status" (click)="onButtonDeactivate(category)">Deactivate</button>
                         <button class="btn btn-success deli" (click)="toggleStatus(category)"   *ngIf="!category.status" (click)="onButtonActivate(category)">Activate</button>
