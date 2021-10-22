@@ -13,7 +13,7 @@ export class UserHomeServicesService {
 
   getCategoriest():Observable<any>{
     
-    return this.http.get<any>(this.apiModel.localhost+"api/categories")
+    return this.http.get<any>(this.apiModel.localhost+"api/categories/topcategories")
   }
 
   getBooks():Observable<any>{

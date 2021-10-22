@@ -65,6 +65,7 @@ export class AdminBodyComponent implements OnInit {
     this.catModel.catImage=this.tempUrl;
     console.log(this.catModel);
     this.service.addCategories(this.catModel).subscribe((data)=>{})
+    window.location.reload();
   }
 
   getCategories(){
@@ -80,7 +81,7 @@ export class AdminBodyComponent implements OnInit {
     this.bookModel.bookStatus=true;
 
     this.service.addBook(this.bookModel).subscribe((data)=>{})
-    console.log(this.bookModel);
+    window.location.reload();
   }
 
   changeCat(event:any){

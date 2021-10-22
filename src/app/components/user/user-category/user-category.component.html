@@ -1,23 +1,27 @@
 <app-user-nav-bar></app-user-nav-bar>
 <ul>
     <li *ngFor="let category of categories">
-        <a (click)="onCatClick(category.categoryId)">
-            <img src="assets/images/categories/{{category.image}}"  alt="Image Not Found" >
-            <div class="content">
-                <div class="name">
-                   {{category.categoryName}}
-                </div>
+        <div *ngIf="category.status==true">
 
-                <div class="product-item-footer" (click)="onCatClick(category.categoryId)">
-                    <div class="origins">
-                        <span  style="font-size: medium;">
-                            {{category.description}}
-                        </span>
+
+            <a (click)="onCatClick(category.categoryId)">
+                <img src="assets/images/categories/{{category.image}}" alt="Image Not Found">
+                <div class="content">
+                    <div class="name">
+                        {{category.categoryName}}
+                    </div>
+
+                    <div class="product-item-footer" (click)="onCatClick(category.categoryId)">
+                        <div class="origins">
+                            <span style="font-size: medium;">
+                                {{category.description}}
+                            </span>
+                        </div>
+
                     </div>
 
                 </div>
-
-            </div>
-        </a>
+            </a>
+        </div>
     </li>
 </ul>

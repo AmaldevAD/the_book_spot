@@ -56,8 +56,8 @@ export class CategoriesComponent implements OnInit {
       reader.readAsDataURL(e.target.files[0])
       this.imagePath=e.target.files[0].name
       console.log(e.target.files[0].name);
-      this.tempUrl=e.target.files[0].name;
-      this.url="assets/images/categories/"+this.tempUrl;
+      this.categoryModel.catImage=e.target.files[0].name;
+      this.url="assets/images/categories/"+this.categoryModel.catImage;
       //console.log(e.target.files[0]);
       reader.onload = (event: any) => {
        
@@ -82,6 +82,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   saveCategories(){
+    
     this.service.editCategories(this.categoryModel.catId,this.categoryModel).subscribe((data)=>{
 
     } )
