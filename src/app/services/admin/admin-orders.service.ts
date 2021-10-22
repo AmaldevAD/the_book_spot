@@ -14,7 +14,7 @@ export class AdminOrdersService {
 
   getOrders(): Observable<any> {
 
-    return this.http.get<any>(this.apiModel.localhost + " orders/getOrders"
+    return this.http.get<any>(this.apiModel.localhost + "api/getOrders"
     )
   }
 
