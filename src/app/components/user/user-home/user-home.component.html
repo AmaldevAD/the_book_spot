@@ -14,7 +14,7 @@
         <div class="carousel-item active ">
             
             <img style="border-radius: 20px;" height="300px" class="d-block w-100"
-                src="https://fdr-cover-images.imgix.net/2020/01/dggbT7A3-Free_Landscape_Book_Mockup_Leon_Dsgn_070120_Prev2.jpg?auto=format&ixlib=php-3.3.0&s=8b5bdfe87e24d32090ce6f1e0bc157c1"
+                src="https://www.readnfix.com/Uploads/Sliders/7664834386banner%203.jpg"
                 alt="First slide">
         </div>
         <div class="carousel-item ">
@@ -96,7 +96,8 @@
     <!-- categories -->
     <div class=" container">
         <div class="row" >
-            <div  *ngFor="let cat of categories">
+            <div   *ngFor="let cat of categories;let i=index">
+                <div *ngIf="i<5">
                 <div style="margin-left: 20px;" >
                     <div style=" position: absolute; z-index: 2; " >
                         <img height="300px" src="assets/images/appIcons/unnamed1.png" alt="" >
@@ -108,6 +109,7 @@
                             alt="" title="" class="img-responsive">
                     </div>
                     <!-- <div  style="margin-left: 20px; font-weight: bold; color: rgb(223, 23, 23);">{{cat.categoryName}}</div> -->
+                </div>
                 </div>
                 
             </div>
