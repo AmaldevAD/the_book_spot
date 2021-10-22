@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Router } from "@angular/router";
 import { UserHomeServicesService } from "src/app/services/user/user-home-services.service";
 
+
 @Component({
   selector: 'app-user-home',
   templateUrl: './user-home.component.html',
@@ -11,6 +12,7 @@ export class UserHomeComponent implements OnInit {
 
   categories:any
   books:any
+  nums : any;
  
 
   constructor( private service:UserHomeServicesService, private route:Router) { 
@@ -20,6 +22,7 @@ export class UserHomeComponent implements OnInit {
     console.log(localStorage.getItem('user'))
     this.getCategories();
     this.getBooks();
+    this.getlatestbook();
   }
   
 
@@ -63,6 +66,16 @@ export class UserHomeComponent implements OnInit {
   bookDetailPage(id:any){
     this.route.navigate(['/user/book-detail',id],{replaceUrl:false});
   }
+  getlatestbook(){
+    this.service.getArrivalsnew().subscribe((data)=>{
+      this.nums= data;
+    })
+
+  }
+  getcatbook(catId: any){
+    this.route.navigate(['/user/catbasedbooklist',catId ],{replaceUrl:false})
+  }
+
 
 
 }

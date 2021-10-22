@@ -3,12 +3,12 @@
         style="background-color: rgb(43, 43, 97); border-top-right-radius:20px;border-bottom-right-radius:20px; height: 100%; position: fixed;top: 0;left: 1px; z-index: 100;">
         <app-admin-sidebar></app-admin-sidebar>
     </div>
-    <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 50px; display: block; z-index: -1; ">
+    <div class="col-10 " style=" clear: both; float: left; left: 13%;margin-top: 50px; display: block; ">
         <h3>Coupon</h3>
         <hr>
         <div>
-            <table class="table table-bordered table-dark  table-hover">
-                <thead>
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
                     <th style="text-align: center;" *ngFor="let head of headers">{{head}}</th>
                 </thead>
                 <tbody>
@@ -16,10 +16,13 @@
                         <td style="text-align: center;">{{coupon.couponId}}</td>
                         <td style="text-align: center;">{{coupon.name}}</td>
                         <td style="text-align: center;">{{coupon.percentage}}</td>
-                        <td style="text-align: center;">{{coupon.status}}</td>
+                        <td style="text-align: center;"><button  class="btn btn-danger" style="border-radius: 3rem;" (click)="DeleteCoupon(coupon.couponId)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
+            
         </div>
+
     </div>
 </div>
+
